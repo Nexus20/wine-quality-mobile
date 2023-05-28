@@ -1,0 +1,35 @@
+﻿@page "/Phases/{phaseId}"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+
+<h3>@Localizer["phases_details_header"]</h3>
+
+@if (_phaseLoaded)
+{
+    <p>@Localizer["phases_name"]: @_phase.Name</p>
+    <p>@Localizer["common_created_at"]: @_phase.CreatedAt</p>
+    <p>@Localizer["common_updated_at"]: @_phase.UpdatedAt</p>
+
+    <h4>@Localizer["phases_parameters"]</h4>
+
+    @if (_phase.Parameters.Any())
+    {
+        <div>@Localizer["phases_no_parameters"]</div>
+    }
+    else
+    {
+        <ul>
+            @foreach (var parameter in _phase.Parameters)
+            {
+                <li>@parameter.Name</li>
+            }
+        </ul>
+    }
+    
+    <a class="btn btn-primary" href="/Phases/@_phase.Id/edit">@Localizer["common_edit"]</a>
+    <a class="btn btn-danger" href="/Phases/@_phase.Id/delete">@Localizer["common_delete"]</a>
+    <a class="btn btn-secondary" href="/Phases">@Localizer["common_back"]</a>
+}
+else
+{
+    <p>@Localizer["common_loading"]</p>
+}

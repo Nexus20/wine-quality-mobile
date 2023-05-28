@@ -1,0 +1,32 @@
+﻿@page "/Phases"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+
+<h3>@Localizer["phases_header"]</h3>
+
+@if (phasesLoaded)
+{
+
+    @foreach (var phase in phases)
+    {
+        <div class="accordion" id="phaseAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{phase.Id}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{phase.Id}")" aria-expanded="false" aria-controls="@($"collapse{phase.Id}")">
+                        @phase.Name
+                    </button>
+                </h2>
+                <div id="@($"collapse{phase.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{phase.Id}")" data-bs-parent="#phaseAccordion">
+                    <div class="accordion-body">
+                        <a href="/Phases/@phase.Id/edit" class="btn btn-primary">@Localizer["common_edit"]</a>
+                        <a href="/Phases/@phase.Id/delete" class="btn btn-danger">@Localizer["common_delete"]</a>
+                        <a href="/Phases/@phase.Id" class="btn btn-secondary">@Localizer["common_details"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>@Localizer["common_loading"]</div>
+}

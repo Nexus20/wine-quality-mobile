@@ -1,0 +1,93 @@
+﻿@using System.Globalization
+@using wine_quality_mobile.Components.Common
+@using wine_quality_mobile.Resources.Languages
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">wine-quality-mobile</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        @if (AppState.IsLoggedIn)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="Phases">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer["phases_header"]
+                </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="Parameters">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer["parameters_header"]
+                </NavLink>
+            </div>
+        }
+        else
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="login">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer["Login"]
+                </NavLink>
+            </div>
+        }
+
+        <div class="nav-item px-3 row">
+
+            @*<select class="form-control" @bind="Culture">
+            
+            @foreach (var language in AppState.AvailableCultures)
+            {
+                <option value="@language">@Localizer[language]</option>
+            }
+            </select>*@
+
+            <div class="nav-item px-3 row">
+                @foreach (var language in States.AppState.AvailableCultures)
+                {
+                    <a class="nav-link col-6 @(States.AppState.CurrentCulture == language ? "active" : string.Empty)" @onclick="(() => ChangeCulture(language))">
+                        <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer[language]
+                    </a>
+                }
+            </div>
+        </div>
+    </nav>
+</div>
+
+@code {
+
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private Task ChangeCulture(string language)
+    {
+        var newCulture = new CultureInfo(language);
+
+        Thread.CurrentThread.CurrentCulture = newCulture;
+        Thread.CurrentThread.CurrentUICulture = newCulture;
+        CultureInfo.DefaultThreadCurrentCulture = newCulture;
+        CultureInfo.DefaultThreadCurrentUICulture = newCulture;
+        CultureInfo.CurrentCulture = newCulture;
+        CultureInfo.CurrentUICulture = newCulture;
+        Localizations.Culture = newCulture;
+        States.AppState.CurrentCulture = language;
+        
+        NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+        return InvokeAsync(StateHasChanged);
+    }
+}

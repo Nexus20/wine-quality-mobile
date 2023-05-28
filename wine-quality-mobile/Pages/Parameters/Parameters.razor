@@ -1,0 +1,32 @@
+﻿@page "/Parameters"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+
+<h3>@Localizer["parameters_header"]</h3>
+
+@if (parametersLoaded)
+{
+
+    @foreach (var parameter in parameters)
+    {
+        <div class="accordion" id="parameterAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{parameter.Id}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{parameter.Id}")" aria-expanded="false" aria-controls="@($"collapse{parameter.Id}")">
+                        @parameter.Name
+                    </button>
+                </h2>
+                <div id="@($"collapse{parameter.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{parameter.Id}")" data-bs-parent="#parameterAccordion">
+                    <div class="accordion-body">
+                        <a href="/Parameters/@parameter.Id/edit" class="btn btn-primary">@Localizer["common_edit"]</a>
+                        <a href="/Parameters/@parameter.Id/delete" class="btn btn-danger">@Localizer["common_delete"]</a>
+                        <a href="/Parameters/@parameter.Id" class="btn btn-secondary">@Localizer["common_details"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>@Localizer["common_loading"]</div>
+}

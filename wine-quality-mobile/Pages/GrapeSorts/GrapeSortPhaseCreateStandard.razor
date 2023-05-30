@@ -1,0 +1,39 @@
+﻿@page "/GrapeSorts/{grapeSortId}/Phases/{grapeSortPhaseId}/CreateStandard"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>GrapeSortPhaseCreateStandard</h3>
+
+@if (GrapeSortDetailsLoaded)
+{
+    <select class="form-select" @onchange="SelectParameter">
+        <option selected>Choose parameter</option>
+        @foreach (var parameter in AvailableParameters)
+        {
+            <option value="@parameter.Id">@parameter.Name</option>
+        }
+    </select>
+    
+    @if (selectedParameter != null)
+    {
+        <div class="mt-4">
+            <h4>Set Standard for @selectedParameter.Name</h4>
+
+            <div class="mb-3">
+                <label for="lowerBound" class="form-label">Lower Bound</label>
+                <input type="number" class="form-control" id="lowerBound" @bind="lowerBound">
+            </div>
+
+            <div class="mb-3">
+                <label for="upperBound" class="form-label">Upper Bound</label>
+                <input type="number" class="form-control" id="upperBound" @bind="upperBound">
+            </div>
+
+            <button class="btn btn-primary" @onclick="CreateStandard">Create Standard</button>
+        </div>
+    }
+    
+    <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id">@Localizer["common_back"]</a>
+}
+else
+{
+    <p>@Localizer["common_loading"]</p>
+}

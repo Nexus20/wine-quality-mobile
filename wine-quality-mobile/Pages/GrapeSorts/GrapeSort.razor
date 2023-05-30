@@ -1,0 +1,69 @@
+﻿@page "/GrapeSorts/{grapeSortId}"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["grape_sort_details_header"]</h3>
+
+
+@if (GrapeSortDetailsLoaded)
+{
+    <p>@Localizer["grape_sort_name"]: @GrapeSortDetails.Name</p>
+    <p>@Localizer["common_created_at"]: @GrapeSortDetails.CreatedAt</p>
+    <p>@Localizer["common_updated_at"]: @GrapeSortDetails.UpdatedAt</p>
+
+    <h4>@Localizer["grape_sort_phases"]</h4>
+
+    @if (!GrapeSortDetails.Phases.Any())
+    {
+        <div>@Localizer["grape_sort_no_phases"]</div>
+    }
+    else
+    {
+        <div class="accordion" id="grapeSortAccordion">
+        @foreach (var grapeSortPhase in GrapeSortDetails.Phases.OrderBy(x => x.Order))
+        {
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{grapeSortPhase.Id}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{grapeSortPhase.Id}")" aria-expanded="false" aria-controls="@($"collapse{grapeSortPhase.Id}")">
+                        @grapeSortPhase.PhaseName
+                    </button>
+                </h2>
+                <div id="@($"collapse{grapeSortPhase.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{grapeSortPhase.Id}")" data-bs-parent="#grapeSortAccordion">
+                    <div class="accordion-body">
+                        <p>@Localizer["grape_sort_phase_order"]: @grapeSortPhase.Order</p>
+                        <h4>@Localizer["grape_sort_phase_parameters"]</h4>
+                        
+                        <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Phases/@grapeSortPhase.Id/CreateStandard">@Localizer["grape_sort_phase_create_standard"]</a>
+                        
+                        @if (grapeSortPhase.GrapeSortProcessPhaseParameterStandards.Any())
+                        {
+                            <ul>
+                                @foreach (var standard in grapeSortPhase.GrapeSortProcessPhaseParameterStandards)
+                                {
+                                    <li>@standard.ParameterName: @standard.LowerBound - @standard.UpperBound <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Standards/@standard.Id/Edit">@Localizer["grape_sort_phase_edit_standard"]</a></li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                @foreach (var parameter in grapeSortPhase.Parameters)
+                                {
+                                    <li>@parameter.Name</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    }
+
+    <a class="btn btn-primary" href="/GrapeSorts/@GrapeSortDetails.Id/edit">@Localizer["common_edit"]</a>
+    <a class="btn btn-danger" href="/GrapeSorts/@GrapeSortDetails.Id/delete">@Localizer["common_delete"]</a>
+    <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/WineMaterialBatches">@Localizer["grape_sorts_wine_material_batches"]</a>
+    <a class="btn btn-secondary" href="/GrapeSorts">@Localizer["common_back"]</a>
+}
+else
+{
+    <p>@Localizer["common_loading"]</p>
+}

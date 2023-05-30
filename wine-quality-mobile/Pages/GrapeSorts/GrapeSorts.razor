@@ -1,0 +1,31 @@
+﻿@page "/GrapeSorts"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3 class="mb-3">@Localizer["grape_sort_header"]</h3>
+
+@if (grapeSortsLoaded)
+{
+    @foreach (var grapeSort in grapeSorts)
+    {
+        <div class="accordion" id="grapeSortAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{grapeSort.Id}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{grapeSort.Id}")" aria-expanded="false" aria-controls="@($"collapse{grapeSort.Id}")">
+                        @grapeSort.Name
+                    </button>
+                </h2>
+                <div id="@($"collapse{grapeSort.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{grapeSort.Id}")" data-bs-parent="#grapeSortAccordion">
+                    <div class="accordion-body">
+                        <a href="/GrapeSorts/@grapeSort.Id/edit" class="btn btn-primary">@Localizer["common_edit"]</a>
+                        <a href="/GrapeSorts/@grapeSort.Id/delete" class="btn btn-danger">@Localizer["common_delete"]</a>
+                        <a href="/GrapeSorts/@grapeSort.Id" class="btn btn-secondary">@Localizer["common_details"]</a>
+                        <a href="/GrapeSorts/@grapeSort.Id/WineMaterialBatches" class="btn btn-secondary">@Localizer["grape_sorts_wine_material_batches"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>@Localizer["common_loading"]</div>
+}

@@ -112,13 +112,13 @@
     <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
-    <data name="common_delete" xml:space="preserve">
+    <data name="common.delete" xml:space="preserve">
     <value>Delete</value>
   </data>
-    <data name="common_details" xml:space="preserve">
+    <data name="common.details" xml:space="preserve">
     <value>Details</value>
   </data>
-    <data name="common_edit" xml:space="preserve">
+    <data name="common.edit" xml:space="preserve">
     <value>Edit</value>
   </data>
     <data name="phases_header" xml:space="preserve">

@@ -14,7 +14,7 @@
         <label for="upperBound" class="form-label">Upper Bound</label>
         <input type="number" class="form-control" id="upperBound" @bind="Standard.UpperBound">
     </div>
-    <button type="submit" class="btn btn-primary" @onclick="SaveAsync">@Localizer["common_confirm"]</button>
+    <button type="submit" class="btn btn-primary" @onclick="SaveAsync">@Localizer["common.confirm"]</button>
 </form>
 } else {
     <p>@Localizer["common_loading"]</p>

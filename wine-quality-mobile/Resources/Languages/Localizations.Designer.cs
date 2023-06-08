@@ -73,7 +73,7 @@ namespace wine_quality_mobile.Resources.Languages {
         /// </summary>
         internal static string common_delete {
             get {
-                return ResourceManager.GetString("common_delete", resourceCulture);
+                return ResourceManager.GetString("common.delete", resourceCulture);
             }
         }
         
@@ -82,7 +82,7 @@ namespace wine_quality_mobile.Resources.Languages {
         /// </summary>
         internal static string common_details {
             get {
-                return ResourceManager.GetString("common_details", resourceCulture);
+                return ResourceManager.GetString("common.details", resourceCulture);
             }
         }
         
@@ -91,7 +91,7 @@ namespace wine_quality_mobile.Resources.Languages {
         /// </summary>
         internal static string common_edit {
             get {
-                return ResourceManager.GetString("common_edit", resourceCulture);
+                return ResourceManager.GetString("common.edit", resourceCulture);
             }
         }
         

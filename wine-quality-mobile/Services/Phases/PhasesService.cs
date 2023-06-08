@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text;
+using Newtonsoft.Json;
+using wine_quality_mobile.Models.Requests.ProcessPhaseTypes;
 using wine_quality_mobile.Models.Results.ProcessPhases;
 
 namespace wine_quality_mobile.Services.Phases;
@@ -34,5 +36,35 @@ public class PhasesService : IPhasesService
         var content = await response.Content.ReadAsStringAsync(cancellationToken);
         var result = JsonConvert.DeserializeObject<ProcessPhaseDetailResult>(content);
         return result;
+    }
+
+    public async Task CreatePhaseAsync(CreateProcessPhaseRequest createProcessPhaseRequest, CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(createProcessPhaseRequest);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await _httpClient.PostAsync("", data, cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to create phase");
+    }
+
+    public async Task UpdateProcessPhaseAsync(UpdateProcessPhaseRequest updateProcessPhaseRequest, CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(updateProcessPhaseRequest);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+        var response = await _httpClient.PutAsync($"{_httpClient.BaseAddress}/{updateProcessPhaseRequest.Id}", data, cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to update phase");
+    }
+    
+    public async Task DeleteProcessPhaseAsync(string phaseId, CancellationToken cancellationToken = default)
+    {
+        var response = await _httpClient.DeleteAsync($"{_httpClient.BaseAddress}/{phaseId}", cancellationToken);
+
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to delete phase");
     }
 }

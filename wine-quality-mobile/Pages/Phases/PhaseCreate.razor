@@ -1,0 +1,18 @@
+﻿@page "/Phases/Create"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>PhaseCreate</h3>
+
+<a class="btn btn-primary" href="/Phases">@Localizer["common.back"]</a>
+
+<EditForm Model="@CreateProcessPhaseRequest" OnValidSubmit="@CreatePhase">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label" for="name">@Localizer["phases.name"]</label>
+        <InputText id="name" class="form-control" @bind-Value="CreateProcessPhaseRequest.Name" />
+        <ValidationMessage For="@(() => CreateProcessPhaseRequest.Name)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">@Localizer["common.confirm"]</button>
+</EditForm>

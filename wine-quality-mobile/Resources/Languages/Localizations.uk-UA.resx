@@ -126,13 +126,13 @@
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>
-  <data name="common_delete" xml:space="preserve">
+  <data name="common.delete" xml:space="preserve">
     <value>Видалити</value>
   </data>
-  <data name="common_details" xml:space="preserve">
+  <data name="common.details" xml:space="preserve">
     <value>Детальніше</value>
   </data>
-  <data name="common_edit" xml:space="preserve">
+  <data name="common.edit" xml:space="preserve">
     <value>Редагувати</value>
   </data>
   <data name="phases_header" xml:space="preserve">

@@ -5,10 +5,10 @@ namespace wine_quality_mobile.Models.Results.WineMaterialBatches;
 
 public class WineMaterialBatchResult : BaseResult
 {
-    public string Name { get; set; } = null!;
+    public string Name { get; set; }
     public DateTime HarvestDate { get; set; }
-    public string HarvestLocation { get; set; } = null!;
+    public string HarvestLocation { get; set; }
     public List<WineMaterialBatchGrapeSortPhaseResult> Phases { get; set; } = null!;
-    public GrapeSortResult GrapeSort { get; set; } = null!;
-    public WineMaterialBatchGrapeSortPhaseResult? ActivePhase => Phases.FirstOrDefault(x => x.IsActive);
+    public GrapeSortResult GrapeSort { get; set; }
+    public WineMaterialBatchGrapeSortPhaseResult ActivePhase => Phases.FirstOrDefault(x => x.IsActive);
 }

@@ -1,3 +1,24 @@
-﻿@page "/GrapeSortWineMaterialBatches"
+﻿@page "/GrapeSorts/{grapeSortId}/WineMaterialBatches"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
 <h3>@Localizer["grape_sort_wine_material_batches_header"]</h3>
+
+@if (WineMaterialBatchesLoaded)
+{
+    foreach (var batch in WineMaterialBatches)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@batch.Name</h5>
+                <p class="card-text">@batch.HarvestDate.ToShortDateString()</p>
+                <p class="card-text">@batch.HarvestLocation</p>
+            </div>
+            <div class="card-footer">
+                <a href="@($"/WineMaterialBatches/{batch.Id}")" class="btn btn-primary">@Localizer["common_details"]</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>@Localizer["common_loading"]...</p>
+}

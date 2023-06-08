@@ -1,0 +1,56 @@
+﻿@page "/WineMaterialBatches/{wineMaterialBatchId}/Phases/{wineMaterialBatchGrapeSortPhaseId}/Sensors"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+
+<h2>@Localizer["wine-material-batches.phases.sensors"]</h2>
+
+@if (_sensorsLoaded)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchId">@Localizer["common_back"]</a>
+            </div>
+        </div>
+    </div>
+    <div class="accordion" id="phaseSensorsAccordion">
+        
+        @foreach (var group in WineMaterialBatchPhaseSensorsDictionary)
+        {
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{group.Key}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{group.Key}")" aria-expanded="false" aria-controls="@($"collapse{group.Key}")">
+                        @group.Key
+                    </button>
+                </h2>
+                <div id="@($"collapse{group.Key}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{group.Key}")" data-bs-parent="#phaseSensorsAccordion">
+                    <div class="accordion-body">
+                        @foreach (var sensor in group.Value)
+                        {
+                            <p>@Localizer["sensors.id"]: @sensor.Id | @Localizer["sensors.status"]: @Statuses[sensor.Status]</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <EditForm Model="AvailableSensorsDictionary" OnValidSubmit="@OnSubmit">
+        @foreach (var group in AvailableSensorsDictionary)
+        {
+            <h3>@Localizer["sensors.parameter"]: @group.Key</h3>
+            foreach (var sensor in group.Value)
+            {
+                <div>
+                    <InputCheckbox id="@sensor.Id" /> @sensor.Id
+                </div>
+            }
+        }
+        <button type="submit" class="btn btn-primary">@Localizer["wine-material-batches.phases.assign-sensors"]</button>
+    </EditForm>
+}
+else
+{
+    <p>
+        @Localizer["common_loading"] ...
+    </p>
+}

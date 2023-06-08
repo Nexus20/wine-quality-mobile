@@ -1,0 +1,29 @@
+﻿@using ChartJs.Blazor
+@using wine_quality_mobile.Enums
+@inherits LayoutComponentBase
+
+<h1>SOME TEST</h1>
+
+<div class="modal @(IsVisible ? "show" : "fade")" id="chart-modal" tabindex="-1" aria-labelledby="chart-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="chart-modal-label">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <Chart @ref="_lineChart" Config="@_config"></Chart>
+            </div>
+            <div class="modal-footer">
+                <select class="form-select" name="" id="chartTypeSelect" @onchange="ChartTypeChanged">
+                    @foreach (var type in Enum.GetValues<ParameterChartType>())
+                    {
+                        <option value="@type">@type.ToString()</option>
+                    }
+                </select>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

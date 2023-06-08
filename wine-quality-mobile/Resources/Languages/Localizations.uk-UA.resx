@@ -156,4 +156,88 @@
   <data name="phases_parameters" xml:space="preserve">
     <value>Параметри</value>
   </data>
+  <data name="common_loading" xml:space="preserve">
+    <value>Завантаження</value>
+  </data>
+  <data name="wine-material-batches.active-phase.header" xml:space="preserve">
+    <value>Активна фаза</value>
+  </data>
+  <data name="wine-material-batches.active-phase.phase" xml:space="preserve">
+    <value>Фаза</value>
+  </data>
+  <data name="wine-material-batches.active-phase.readings" xml:space="preserve">
+    <value>Показники</value>
+  </data>
+  <data name="wine-material-batches.active-phase.start-date" xml:space="preserve">
+    <value>Дата початку</value>
+  </data>
+  <data name="wine-material-batches.phases.end-date" xml:space="preserve">
+    <value>Дата закінченн</value>
+  </data>
+  <data name="wine-material-batches.phases.header" xml:space="preserve">
+    <value>Фази</value>
+  </data>
+  <data name="wine-material-batches.phases.start-date" xml:space="preserve">
+    <value>Дата початку</value>
+  </data>
+  <data name="sensors.header" xml:space="preserve">
+    <value>Доступні сенсори</value>
+  </data>
+    <data name="sensors.id" xml:space="preserve">
+      <value>Ідентифікатор пристрою</value>
+  </data>
+    <data name="sensors.phase" xml:space="preserve">
+      <value>Фаза</value>
+  </data>
+    <data name="sensors.parameter" xml:space="preserve">
+      <value>Параметр</value>
+  </data>
+    <data name="sensors.status" xml:space="preserve">
+      <value>Статус</value>
+  </data>
+    <data name="sensors.copy-device-key" xml:space="preserve">
+      <value>Скопіювати ключ пристрою</value>
+  </data>
+    <data name="sensors.device-key-copied" xml:space="preserve">
+      <value>Ключ пристрою скопійовано</value>
+  </data>
+    <data name="sensors.device-id-copied" xml:space="preserve">
+      <value>Ідентифікатор пристрою скопійовано</value>
+  </data>
+    <data name="sensors.start" xml:space="preserve">
+      <value>Запустити</value>
+  </data>
+    <data name="sensors.stop" xml:space="preserve">
+      <value>Зупинити</value>
+  </data>
+    <data name="sensors.details.header" xml:space="preserve">
+      <value>Детальна інформація</value>
+  </data>
+    <data name="sensors.details.no-phases" xml:space="preserve">
+      <value>Цей пристрій ще не підключено до жодної фази партії винограду.</value>
+  </data>
+    <data name="sensors.create.header" xml:space="preserve">
+      <value>Створити новий сенсор</value>
+  </data>
+    <data name="sensors.edit.header" xml:space="preserve">
+      <value>Редагувати сенсор</value>
+  </data>
+    <data name="sensors.delete.header" xml:space="preserve">
+      <value>Підтвердьте видалення датчика</value>
+  </data>
+    <data name="sensors.delete.warning" xml:space="preserve">
+      <value>Ви впевнені, що хочете видалити цей датчик? Цю дію не можна скасувати.</value>
+  </data>
+  <data name="wine-material-batches.grape-sort" xml:space="preserve">
+    <value>Сорт винограду</value>
+  </data>
+  <data name="wine-material-batches.harvest-date" xml:space="preserve">
+    <value>Дата сбору</value>
+  </data>
+  <data name="wine-material-batches.harvest-location" xml:space="preserve">
+    <value>Місце сбору</value>
+  </data>
+  <data name="wine_material_batch_details_header" xml:space="preserve">
+    <value>Детальна інформація</value>
+  </data>
 </root>

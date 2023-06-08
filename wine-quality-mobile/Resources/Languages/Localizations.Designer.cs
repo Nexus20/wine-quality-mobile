@@ -96,6 +96,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        internal static string common_loading {
+            get {
+                return ResourceManager.GetString("common_loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updated at.
         /// </summary>
         internal static string common_updated_at {
@@ -168,11 +177,254 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy device key.
+        /// </summary>
+        internal static string sensors_copy_device_key {
+            get {
+                return ResourceManager.GetString("sensors.copy-device-key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new sensor.
+        /// </summary>
+        internal static string sensors_create_header {
+            get {
+                return ResourceManager.GetString("sensors.create.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm sensor deletion.
+        /// </summary>
+        internal static string sensors_delete_header {
+            get {
+                return ResourceManager.GetString("sensors.delete.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this sensor? This action cannot be undone..
+        /// </summary>
+        internal static string sensors_delete_warning {
+            get {
+                return ResourceManager.GetString("sensors.delete.warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sensor details.
+        /// </summary>
+        internal static string sensors_details_header {
+            get {
+                return ResourceManager.GetString("sensors.details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This sensor hasn&apos;t been linked to any phase yet..
+        /// </summary>
+        internal static string sensors_details_no_phases {
+            get {
+                return ResourceManager.GetString("sensors.details.no-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device id copied.
+        /// </summary>
+        internal static string sensors_device_id_copied {
+            get {
+                return ResourceManager.GetString("sensors.device-id-copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device key copied.
+        /// </summary>
+        internal static string sensors_device_key_copied {
+            get {
+                return ResourceManager.GetString("sensors.device-key-copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit sensor.
+        /// </summary>
+        internal static string sensors_edit_header {
+            get {
+                return ResourceManager.GetString("sensors.edit.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available sensors.
+        /// </summary>
+        internal static string sensors_header {
+            get {
+                return ResourceManager.GetString("sensors.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Device ID.
+        /// </summary>
+        internal static string sensors_id {
+            get {
+                return ResourceManager.GetString("sensors.id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter.
+        /// </summary>
+        internal static string sensors_parameter {
+            get {
+                return ResourceManager.GetString("sensors.parameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase.
+        /// </summary>
+        internal static string sensors_phase {
+            get {
+                return ResourceManager.GetString("sensors.phase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string sensors_start {
+            get {
+                return ResourceManager.GetString("sensors.start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string sensors_status {
+            get {
+                return ResourceManager.GetString("sensors.status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        internal static string sensors_stop {
+            get {
+                return ResourceManager.GetString("sensors.stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ukrainian.
         /// </summary>
         internal static string uk_UA {
             get {
                 return ResourceManager.GetString("uk-UA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wine material batch details.
+        /// </summary>
+        internal static string wine_material_batch_details_header {
+            get {
+                return ResourceManager.GetString("wine_material_batch_details_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active phase.
+        /// </summary>
+        internal static string wine_material_batches_active_phase_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.active-phase.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase.
+        /// </summary>
+        internal static string wine_material_batches_active_phase_phase {
+            get {
+                return ResourceManager.GetString("wine-material-batches.active-phase.phase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Readings.
+        /// </summary>
+        internal static string wine_material_batches_active_phase_readings {
+            get {
+                return ResourceManager.GetString("wine-material-batches.active-phase.readings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start date.
+        /// </summary>
+        internal static string wine_material_batches_active_phase_start_date {
+            get {
+                return ResourceManager.GetString("wine-material-batches.active-phase.start-date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grape sort.
+        /// </summary>
+        internal static string wine_material_batches_grape_sort {
+            get {
+                return ResourceManager.GetString("wine-material-batches.grape-sort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Harvest date.
+        /// </summary>
+        internal static string wine_material_batches_harvest_date {
+            get {
+                return ResourceManager.GetString("wine-material-batches.harvest-date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Harvest location.
+        /// </summary>
+        internal static string wine_material_batches_harvest_location {
+            get {
+                return ResourceManager.GetString("wine-material-batches.harvest-location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to End date.
+        /// </summary>
+        internal static string wine_material_batches_phases_end_date {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.end-date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases.
+        /// </summary>
+        internal static string wine_material_batches_phases_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start date.
+        /// </summary>
+        internal static string wine_material_batches_phases_start_date {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.start-date", resourceCulture);
             }
         }
     }

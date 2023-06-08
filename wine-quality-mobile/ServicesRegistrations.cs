@@ -1,13 +1,18 @@
 ﻿using wine_quality_mobile.Services.GrapeSorts;
 using wine_quality_mobile.Services.Parameters;
 using wine_quality_mobile.Services.Phases;
+using wine_quality_mobile.Services.Sensors;
+using wine_quality_mobile.Services.SignalR;
 using wine_quality_mobile.Services.Users;
+using wine_quality_mobile.Services.WineMaterialBatches;
 using wine_quality_mobile.States;
 
 namespace wine_quality_mobile;
 
 public static class ServicesRegistrations
 {
+    private const string ApiBaseAddress = "https://192.168.0.101:7110/api";
+    
     public static IServiceCollection AddCustomServices(this IServiceCollection services)
     {
         services.AddSingleton<AppState>();
@@ -15,7 +20,7 @@ public static class ServicesRegistrations
             {
                 var appState = serviceProvider.GetRequiredService<AppState>();
 
-                client.BaseAddress = new Uri("https://192.168.0.111:7110/api/processPhase");
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/processPhase");
 
                 if (appState.IsLoggedIn)
                 {
@@ -31,7 +36,7 @@ public static class ServicesRegistrations
             {
                 var appState = serviceProvider.GetRequiredService<AppState>();
 
-                client.BaseAddress = new Uri("https://192.168.0.111:7110/api/processParameter");
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/processParameter");
 
                 if (appState.IsLoggedIn)
                 {
@@ -52,7 +57,7 @@ public static class ServicesRegistrations
                     client.DefaultRequestHeaders.Add("Authorization", $"Bearer {appState.LoginResult!.Token}");
                 }
 
-                client.BaseAddress = new Uri("https://192.168.0.111:7110/api/");
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/");
             })
             .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
             {
@@ -68,13 +73,47 @@ public static class ServicesRegistrations
                     client.DefaultRequestHeaders.Add("Authorization", $"Bearer {appState.LoginResult!.Token}");
                 }
 
-                client.BaseAddress = new Uri("https://192.168.0.111:7110/api/");
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/");
+            })
+            .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            });
+        
+        services.AddHttpClient<IWineMaterialBatchService, WineMaterialBatchService>((serviceProvider, client) =>
+            {
+                var appState = serviceProvider.GetRequiredService<AppState>();
+
+                if (appState.IsLoggedIn)
+                {
+                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {appState.LoginResult!.Token}");
+                }
+
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/wineMaterialBatch");
+            })
+            .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            });
+        
+        services.AddHttpClient<ISensorService, SensorService>((serviceProvider, client) =>
+            {
+                var appState = serviceProvider.GetRequiredService<AppState>();
+
+                if (appState.IsLoggedIn)
+                {
+                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {appState.LoginResult!.Token}");
+                }
+
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/sensor");
             })
             .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
             {
                 ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
             });
 
+        services.AddSingleton<ISignalRService, SignalRService>();
+        
         return services;
     }
 }

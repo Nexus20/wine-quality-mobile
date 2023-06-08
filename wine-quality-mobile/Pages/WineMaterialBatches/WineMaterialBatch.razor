@@ -1,0 +1,82 @@
+﻿@page "/WineMaterialBatches/{wineMaterialBatchId}"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine_material_batch_details_header"]</h3>
+
+@if (WineMaterialBatchDetailsLoaded)
+{
+    var activePhase = WineMaterialBatchDetails?.ActivePhase;
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-primary" href="/WineMaterialBatches">@Localizer["common_back"]</a>        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="wine-material-batch-details">
+                    <h2>@WineMaterialBatchDetails.Name</h2>
+                    <p>@Localizer["wine-material-batches.harvest-date"]: @WineMaterialBatchDetails.HarvestDate.ToShortDateString()</p>
+                    <p>@Localizer["wine-material-batches.harvest-location"]: @WineMaterialBatchDetails.HarvestLocation</p>
+                    <p>@Localizer["wine-material-batches.grape-sort"]: @WineMaterialBatchDetails.GrapeSort.Name</p>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header" @onclick="ToggleActivePhaseVisibility">
+                        <h3>@Localizer["wine-material-batches.active-phase.header"]</h3>
+                    </div>
+                    @if (_activePhaseVisible)
+                    {
+                        <div class="card-body">
+                            @if (activePhase != null)
+                            {
+                                <p>@Localizer["wine-material-batches.active-phase.phase"]: @activePhase.Phase.PhaseName</p>
+                                <p>@Localizer["wine-material-batches.active-phase.start-date"]: @activePhase.StartDate.ToShortDateString()</p>
+                                <p>@Localizer["wine-material-batches.active-phase.end-date"]: @activePhase.EndDate.ToShortDateString()</p>
+                                <h4>@Localizer["wine-material-batches.active-phase.readings"]</h4>
+                                <div>
+                                    @foreach (var reading in activePhase.Readings)
+                                    {
+                                        <p>@reading.ParameterName: @reading.Value</p>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <p>@Localizer["wine-material-batches.no-active-phase.phase"]</p>
+                                @* Put here your logic about "startProcessAllowed" and "startProcessNotAllowedReasons". *@
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <section class="phases-section">
+                    <h3>@Localizer["wine-material-batches.phases.header"]</h3>
+                    @* Not sure how to replicate "openPhasesEditDialog" functionality. Place your logic here. *@
+                    @* <button @onclick="() => {}">@Localizer["wine-material-batches.phases.edit"]</button> *@
+                    <div>
+                        @foreach (var wineMaterialBatchGrapeSortPhase in WineMaterialBatchDetails.Phases)
+                        {
+                            <div class="phase-card">
+                                <h3>@wineMaterialBatchGrapeSortPhase.Phase.PhaseName</h3>
+                                <p>@Localizer["wine-material-batches.phases.start-date"]: @wineMaterialBatchGrapeSortPhase.StartDate.ToShortDateString()</p>
+                                <p>@Localizer["wine-material-batches.phases.end-date"]: @wineMaterialBatchGrapeSortPhase.EndDate.ToShortDateString()</p>
+                                <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchId/Phases/@wineMaterialBatchGrapeSortPhase.Id/Sensors?PhaseId=@wineMaterialBatchGrapeSortPhase.Phase.PhaseId">@Localizer["wine-material-batches.phases.sensors"]</a>
+                                <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchId/Phases/@wineMaterialBatchGrapeSortPhase.Id">@Localizer["wine-material-batches.phases.details"]</a>
+                            </div>
+                        }
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>
+        @Localizer["common_loading"] ...
+    </p>
+}

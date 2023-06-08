@@ -17,18 +17,18 @@ public class WineMaterialBatchGrapeSortPhaseResult : BaseResult
     public DateTime EndDate { get; set; }
     public bool IsActive { get; set; }
     public GrapeSortPhaseResult Phase { get; set; } = null!;
-    public List<WineMaterialBatchGrapeSortPhaseParameterResult>? Parameters { get; set; }
+    public List<WineMaterialBatchGrapeSortPhaseParameterResult> Parameters { get; set; }
 }
 
 public class WineMaterialBatchGrapeSortPhaseDetailsResult : WineMaterialBatchGrapeSortPhaseResult
 {
-    public List<WineMaterialBatchGrapeSortPhaseParameterDetailsResult>? ParametersDetails { get; set; } 
+    public List<WineMaterialBatchGrapeSortPhaseParameterDetailsResult> ParametersDetails { get; set; } 
 }
 
 public class WineMaterialBatchGrapeSortPhaseParameterDetailsResult : BaseResult
 {
     public ProcessParameterResult Parameter { get; set; }
-    public List<ProcessPhaseParameterSensorResult>? Sensors { get; set; }
+    public List<ProcessPhaseParameterSensorResult> Sensors { get; set; }
     public GrapeSortProcessPhaseParameterStandardResult Standard { get; set; }
 }
 

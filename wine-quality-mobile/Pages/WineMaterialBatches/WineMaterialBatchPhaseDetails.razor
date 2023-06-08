@@ -1,0 +1,75 @@
+﻿@page "/WineMaterialBatches/{WineMaterialBatchId}/Phases/{WineMaterialBatchGrapeSortPhaseId}"
+@using wine_quality_mobile.Enums
+@using wine_quality_mobile.Components;
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+@implements IAsyncDisposable
+<h3>WineMaterialBatchPhaseDetails</h3>
+
+@if (_wineMaterialBatchGrapeSortPhaseLoaded)
+{
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-12">
+                <h1>@WineMaterialBatchDetails.Name</h1>
+                <p>@WineMaterialBatchDetails.GrapeSort.Name</p>
+                <p>Phase: @WineMaterialBatchGrapeSortPhase.Phase.PhaseName</p>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="accordion" id="parameterAccordion">
+                    @foreach (var parameter in WineMaterialBatchGrapeSortPhase.ParametersDetails)
+                    {
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="@($"heading{parameter.Id}")">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{parameter.Id}")" aria-expanded="false" aria-controls="@($"collapse{parameter.Id}")">
+                                    @parameter.Parameter.Name
+                                </button>
+                            </h2>
+                            <div id="@($"collapse{parameter.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{parameter.Id}")" data-bs-parent="#parameterAccordion">
+                                <div class="accordion-body">
+                                    @if (parameter.Standard != null)
+                                    {
+                                        <p>Standard: @parameter.Standard.LowerBound ... @parameter.Standard.UpperBound</p>
+                                        <button @onclick="() => OpenChartDialog(parameter)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chart-modal">Show chart</button>
+                                        @* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chart-modal">Show chart</button> *@
+                                        @* <button type="button" class="btn btn-primary" @onclick="() => OpenChartDialog(parameter)">Show chart</button> *@
+                                    }
+                                    <p>Sensors:</p>
+                                    <ul>
+                                        @foreach (var sensor in parameter.Sensors)
+                                        {
+                                            <li>
+                                                @sensor.Id (Status: @Statuses[sensor.Status]): @sensor.LastValue
+                                                @if (sensor.Status == DeviceStatus.Working)
+                                                {
+                                                    <button class="btn btn-primary">Stop</button>
+                                                }
+                                                @if (sensor.Status is DeviceStatus.BoundariesUpdated or DeviceStatus.Stopped)
+                                                {
+                                                    <button class="btn btn-primary">Start</button>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Сюда можно добавить информацию о статусе фазы и действия для пользователя -->
+            </div>
+        </div>
+    </div>
+    <ChartDialog @ref="ChartDialogRef" />
+}
+else
+{
+    <p>
+        @Localizer["common_loading"] ...
+    </p>
+}

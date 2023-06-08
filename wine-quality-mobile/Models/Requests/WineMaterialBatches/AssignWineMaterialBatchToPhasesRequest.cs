@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using wine_quality_mobile.Enums;
 
 namespace wine_quality_mobile.Models.Requests.WineMaterialBatches;
 
@@ -32,14 +33,4 @@ public class GetWineMaterialBatchPhaseParameterChartDataRequest
 {
     [Required] public string WineMaterialBatchGrapeSortPhaseParameterId { get; set; } = null!;
     [Required] public ParameterChartType ChartType { get; set; }
-}
-
-public enum ParameterChartType
-{
-    Hour = 1000,
-    Day = 2000,
-    Week = 3000,
-    Month = 4000,
-    Year = 5000,
-    AllTime = 6000
 }

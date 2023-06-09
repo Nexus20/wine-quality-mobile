@@ -147,16 +147,19 @@
   <data name="phases_details_header" xml:space="preserve">
     <value>Деталі фази</value>
   </data>
-  <data name="common_updated_at" xml:space="preserve">
+  <data name="common.createdAt" xml:space="preserve">
+    <value>Створено</value>
+  </data>
+  <data name="common.updatedAt" xml:space="preserve">
     <value>Оновлено</value>
   </data>
-  <data name="common_created_at" xml:space="preserve">
-    <value>Створено</value>
+  <data name="common.add" xml:space="preserve">
+    <value>Додати</value>
   </data>
   <data name="phases_parameters" xml:space="preserve">
     <value>Параметри</value>
   </data>
-  <data name="common_loading" xml:space="preserve">
+  <data name="common.loading" xml:space="preserve">
     <value>Завантаження</value>
   </data>
   <data name="wine-material-batches.active-phase.header" xml:space="preserve">
@@ -237,7 +240,7 @@
   <data name="wine-material-batches.harvest-location" xml:space="preserve">
     <value>Місце сбору</value>
   </data>
-  <data name="wine_material_batch_details_header" xml:space="preserve">
+  <data name="wine-material-batches.details.header" xml:space="preserve">
     <value>Детальна інформація</value>
   </data>
   <data name="grape-sorts.header" xml:space="preserve">
@@ -287,5 +290,44 @@
   </data>
     <data name="grape-sorts.edit-phases.saved" xml:space="preserve">
     <value>Порядок фаз збережено</value>
+  </data>
+  <data name="parameters.header" xml:space="preserve">
+    <value>Доступні параметри процесу виробництва вина</value>
+  </data>
+    <data name="parameters.name" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+    <data name="parameters.phases" xml:space="preserve">
+    <value>Фази</value>
+  </data>
+    <data name="parameters.details.header" xml:space="preserve">
+    <value>Детальна інформація</value>
+  </data>
+    <data name="parameters.details.no-phases" xml:space="preserve">
+    <value>Параметр ще не призначено до жодної фази.</value>
+  </data>
+    <data name="parameters.create.header" xml:space="preserve">
+    <value>Створити параметр</value>
+  </data>
+    <data name="parameters.edit.header" xml:space="preserve">
+    <value>Редагувати параметр</value>
+  </data>
+    <data name="parameters.delete.header" xml:space="preserve">
+    <value>Підтвердити видалення параметра</value>
+  </data>
+    <data name="parameters.delete.warning" xml:space="preserve">
+    <value>Ви впевнені, що хочете видалити цей параметр? Цю дію не можна скасувати.</value>
+  </data>
+  <data name="wine-material-batches.create.header" xml:space="preserve">
+    <value>Створити нову партію винограду</value>
+  </data>
+  <data name="wine-material-batches.delete.header" xml:space="preserve">
+    <value>Підтвердити видалення партії винограду</value>
+  </data>
+  <data name="wine-material-batches.delete.warning" xml:space="preserve">
+    <value>Ви впевнені, що хочете видалити цю партію винограду? Цю дію не можна скасувати.</value>
+  </data>
+  <data name="wine-material-batches.edit.header" xml:space="preserve">
+    <value>Редагувати партію винограду</value>
   </data>
 </root>

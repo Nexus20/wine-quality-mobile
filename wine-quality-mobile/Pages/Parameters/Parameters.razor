@@ -21,9 +21,11 @@
                 </h2>
                 <div id="@($"collapse{parameter.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{parameter.Id}")" data-bs-parent="#parameterAccordion">
                     <div class="accordion-body">
-                        <a href="/Parameters/@parameter.Id/Edit" class="btn btn-primary">@Localizer["common.edit"]</a>
-                        <a href="/Parameters/@parameter.Id/Delete" class="btn btn-danger">@Localizer["common.delete"]</a>
-                        <a href="/Parameters/@parameter.Id" class="btn btn-secondary">@Localizer["common.details"]</a>
+                        <div class="btn-group" role="group">
+                            <a href="/Parameters/@parameter.Id" class="btn btn-secondary"><i class="fa-solid fa-eye"></i></a>
+                            <a href="/Parameters/@parameter.Id/Edit" class="btn btn-primary"><i class="fa-solid fa-pen-nib"></i></a>
+                            <a href="/Parameters/@parameter.Id/Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,5 +34,5 @@
 }
 else
 {
-    <div>@Localizer["common_loading"]</div>
+    <div>@Localizer["common.loading"]</div>
 }

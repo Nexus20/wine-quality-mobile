@@ -1,0 +1,26 @@
+﻿@page "/WineMaterialBatches/{wineMaterialBatchId}/Delete"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine-material-batches.delete.header"]</h3>
+
+<a href="/WineMaterialBatches/@WineMaterialBatchId" class="btn btn-primary">@Localizer["common.back"]</a>
+
+@if (_dataLoaded)
+{
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <div class="alert alert-warning">
+                @Localizer["wine-material-batches.delete.warning"]
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-danger" @onclick="DeleteWineMaterialBatchAsync">@Localizer["common.confirm"]</button>
+            <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchId">@Localizer["common.cancel"]</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

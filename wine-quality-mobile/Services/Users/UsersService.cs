@@ -45,4 +45,9 @@ public class UsersService : IUsersService
 
         return result;
     }
+
+    public void Logout()
+    {
+        _appState.SetLoginResult(null);
+    }
 }

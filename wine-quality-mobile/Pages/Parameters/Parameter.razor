@@ -5,9 +5,11 @@
 
 @if (_parameterLoaded)
 {
+    <a class="btn btn-secondary" href="/Parameters">@Localizer["common.back"]</a>
+    
     <p>@Localizer["parameters_name"]: @_parameter.Name</p>
-    <p>@Localizer["common_created_at"]: @_parameter.CreatedAt</p>
-    <p>@Localizer["common_updated_at"]: @_parameter.UpdatedAt</p>
+    <p>@Localizer["common.createdAt"]: @_parameter.CreatedAt</p>
+    <p>@Localizer["common.updatedAt"]: @_parameter.UpdatedAt</p>
 
     <h4>@Localizer["parameters_phases"]</h4>
 
@@ -25,11 +27,12 @@
         </ul>
     }
     
-    <a class="btn btn-primary" href="/Parameters/@_parameter.Id/Edit">@Localizer["common.edit"]</a>
-    <a class="btn btn-danger" href="/Parameters/@_parameter.Id/Delete">@Localizer["common.delete"]</a>
-    <a class="btn btn-secondary" href="/Parameters">@Localizer["common.back"]</a>
+    <div class="btn-group" role="group">
+        <a class="btn btn-primary" href="/Parameters/@_parameter.Id/Edit"><i class="fa-solid fa-pen-nib"></i></a>
+        <a class="btn btn-danger" href="/Parameters/@_parameter.Id/Delete"><i class="fa-solid fa-trash"></i></a>
+    </div>
 }
 else
 {
-    <p>@Localizer["common_loading"]</p>
+    <p>@Localizer["common.loading"]</p>
 }

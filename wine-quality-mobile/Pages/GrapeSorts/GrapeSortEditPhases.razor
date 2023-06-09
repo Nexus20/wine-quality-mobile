@@ -1,46 +1,69 @@
 ﻿@page "/GrapeSorts/{grapeSortId}/Phases/Edit"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
-<h3>GrapeSortEditPhases</h3>
+<h3>@Localizer["grape-sorts.edit-phases.header"]</h3>
 
 @if (_dataLoaded)
 {
+    @if (_availablePhases.Any())
+    {
+
+        <div>
+            <h3>@Localizer["grape-sorts.edit-phases.available-phases"]:</h3>
+            <ul class="list-group">
+                @foreach (var phase in _availablePhases)
+                {
+                    <li class="list-group-item d-flex align justify-content-between">
+                        <div>
+                            @phase.Name
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-dark" @onclick="() => MoveToAssigned(phase)">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    @if (_grapeSortPhases.Any())
+    {
+        <div>
+            <h3>@Localizer["grape-sorts.edit-phases.grape-sort-phases"]:</h3>
+            <ul class="list-group">
+                @for (var i = 0; i < _grapeSortPhases.Count; i++)
+                {
+                    var phase = _grapeSortPhases[i];
+                    <li class="list-group-item d-flex align justify-content-between">
+                        <div>
+                            @phase.Name
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-dark" @onclick="() => MoveToAvailable(phase)">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            @if (i != 0)
+                            {
+                                var tmp = i;
+                                <button class="btn btn-outline-dark" @onclick="() => MoveUp(tmp)">
+                                    <i class="fa-solid fa-chevron-up"></i>
+                                </button>
+                            }
+                            @if (i != _grapeSortPhases.Count - 1)
+                            {
+                                var tmp = i;
+                                <button class="btn btn-outline-dark" @onclick="() => MoveDown(tmp)">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    }
     <div>
-        <h3>Available phases:</h3>
-        <ul>
-            @foreach (var phase in _availablePhases)
-            {
-                <li>
-                    @phase.Name 
-                    <button @onclick="() => MoveToAssigned(phase)">-></button>
-                </li>
-            }
-        </ul>
-    </div>
-    <div>
-        <h3>Assigned phases:</h3>
-        <ul>
-            @for (var i = 0; i < _grapeSortPhases.Count; i++)
-            {
-                var phase = _grapeSortPhases[i];
-                <li>
-                    @phase.Name 
-                    <button @onclick="() => MoveToAvailable(phase)">-</button>
-                    @if (i != 0)
-                    {
-                        var tmp = i;
-                        <button @onclick="() => MoveUp(tmp)">Up</button>
-                    }
-                    @if (i != _grapeSortPhases.Count - 1)
-                    {
-                        var tmp = i;
-                        <button @onclick="() => MoveDown(tmp)">Down</button>
-                    }
-                </li>
-            }
-        </ul>
-    </div>
-    <div>
-        <button @onclick="SavePhasesOrderAsync">Save</button>
+        <button class="btn btn-primary" @onclick="SavePhasesOrderAsync">@Localizer["common.confirm"]</button>
     </div>
 }
 else

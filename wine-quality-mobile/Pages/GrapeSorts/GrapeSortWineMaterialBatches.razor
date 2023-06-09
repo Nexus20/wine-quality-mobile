@@ -1,9 +1,16 @@
 ﻿@page "/GrapeSorts/{grapeSortId}/WineMaterialBatches"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
-<h3>@Localizer["grape_sort_wine_material_batches_header"]</h3>
+<h3>@Localizer["grape-sorts.details.wine-material-batches"]</h3>
 
 @if (WineMaterialBatchesLoaded)
 {
+    <div>
+        <a href="@($"/GrapeSorts/{GrapeSortId}")" class="btn btn-secondary">@Localizer["common.back"]</a>
+    </div>
+    <div>
+        <a href="@($"/GrapeSorts/{GrapeSortId}/WineMaterialBatches/Create")" class="btn btn-primary">@Localizer["common.add"]</a>
+    </div>
+    
     foreach (var batch in WineMaterialBatches)
     {
         <div class="card">
@@ -13,12 +20,22 @@
                 <p class="card-text">@batch.HarvestLocation</p>
             </div>
             <div class="card-footer">
-                <a href="@($"/WineMaterialBatches/{batch.Id}")" class="btn btn-primary">@Localizer["common.details"]</a>
+                <div class="btn-group d-flex" role="group">
+                    <a href="@($"/WineMaterialBatches/{batch.Id}")" class="btn btn-secondary">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                    <a href="@($"/WineMaterialBatches/{batch.Id}/Edit")" class="btn btn-primary">
+                        <i class="fa-solid fa-edit"></i>
+                    </a>
+                    <a href="@($"/WineMaterialBatches/{batch.Id}/Delete")" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
             </div>
         </div>
     }
 }
 else
 {
-    <p>@Localizer["common_loading"]...</p>
+    <p>@Localizer["common.loading"]...</p>
 }

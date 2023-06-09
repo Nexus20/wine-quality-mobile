@@ -6,8 +6,8 @@
 @if (_phaseLoaded)
 {
     <p>@Localizer["phases_name"]: @_phase.Name</p>
-    <p>@Localizer["common_created_at"]: @_phase.CreatedAt</p>
-    <p>@Localizer["common_updated_at"]: @_phase.UpdatedAt</p>
+    <p>@Localizer["common.createdAt"]: @_phase.CreatedAt</p>
+    <p>@Localizer["common.updatedAt"]: @_phase.UpdatedAt</p>
 
     <h4>@Localizer["phases_parameters"]</h4>
 
@@ -25,12 +25,12 @@
         </ul>
     }
     
-    <a class="btn btn-primary" href="/Phases/@_phase.Id/Edit">@Localizer["common.edit"]</a>
+    <a class="btn btn-primary" href="/Phases/@_phase.Id/Edit"><i class="fa-solid fa-pen-nib"></i></a>
     <a href="/Phases/@_phase.Id/EditParameters" class="btn btn-secondary">@Localizer["phases.configure-parameters.button"]</a>
-    <a class="btn btn-danger" href="/Phases/@_phase.Id/Delete">@Localizer["common.delete"]</a>
+    <a class="btn btn-danger" href="/Phases/@_phase.Id/Delete"><i class="fa-solid fa-trash"></i></a>
     <a class="btn btn-secondary" href="/Phases">@Localizer["common.back"]</a>
 }
 else
 {
-    <p>@Localizer["common_loading"]</p>
+    <p>@Localizer["common.loading"]</p>
 }

@@ -133,16 +133,31 @@
     <data name="phases_details_header" xml:space="preserve">
         <value>Phase details</value>
     </data>
-    <data name="common_created_at" xml:space="preserve">
+    <data name="common.createdAt" xml:space="preserve">
         <value>Created at</value>
     </data>
-    <data name="common_updated_at" xml:space="preserve">
+    <data name="common.updatedAt" xml:space="preserve">
         <value>Updated at</value>
+    </data>
+    <data name="common.add" xml:space="preserve">
+        <value>Add new</value>
     </data>
     <data name="phases_parameters" xml:space="preserve">
         <value>Parameters</value>
     </data>
-    <data name="wine_material_batch_details_header" xml:space="preserve">
+    <data name="wine-material-batches.create.header" xml:space="preserve">
+        <value>Create new wine material batch</value>
+    </data>
+    <data name="wine-material-batches.edit.header" xml:space="preserve">
+        <value>Edit wine material batch</value>
+    </data>
+    <data name="wine-material-batches.delete.header" xml:space="preserve">
+        <value>Confirm wine material batch deletion</value>
+    </data>
+    <data name="wine-material-batches.delete.warning" xml:space="preserve">
+        <value>Are you sure you want to delete this wine material batch? This action cannot be undone.</value>
+    </data>
+    <data name="wine-material-batches.details.header" xml:space="preserve">
         <value>Wine material batch details</value>
     </data>
     <data name="wine-material-batches.harvest-date" xml:space="preserve">
@@ -175,7 +190,7 @@
     <data name="wine-material-batches.phases.end-date" xml:space="preserve">
         <value>End date</value>
     </data>
-    <data name="common_loading" xml:space="preserve">
+    <data name="common.loading" xml:space="preserve">
         <value>Loading</value>
     </data>
     <data name="sensors.header" xml:space="preserve">
@@ -229,7 +244,7 @@
     <data name="grape-sorts.header" xml:space="preserve">
       <value>Available grape sorts</value>
     </data>
-        <data name="grape-sorts.name" xml:space="preserve">
+    <data name="grape-sorts.name" xml:space="preserve">
       <value>Name</value>
     </data>
         <data name="grape-sorts.details.header" xml:space="preserve">
@@ -273,5 +288,32 @@
     </data>
         <data name="grape-sorts.edit-phases.saved" xml:space="preserve">
       <value>Phases order saved</value>
+    </data>
+    <data name="parameters.header" xml:space="preserve">
+      <value>Available wine process parameters</value>
+    </data>
+        <data name="parameters.name" xml:space="preserve">
+      <value>Name</value>
+    </data>
+        <data name="parameters.phases" xml:space="preserve">
+      <value>Phases</value>
+    </data>
+        <data name="parameters.details.header" xml:space="preserve">
+      <value>Parameter details</value>
+    </data>
+        <data name="parameters.details.no-phases" xml:space="preserve">
+      <value>This parameter hasn't been linked to any phase yet.</value>
+    </data>
+        <data name="parameters.create.header" xml:space="preserve">
+      <value>Create new parameter</value>
+    </data>
+        <data name="parameters.edit.header" xml:space="preserve">
+      <value>Edit parameter</value>
+    </data>
+        <data name="parameters.delete.header" xml:space="preserve">
+      <value>Confirm parameter deletion</value>
+    </data>
+        <data name="parameters.delete.warning" xml:space="preserve">
+      <value>Are you sure you want to delete this parameter? This action cannot be undone.</value>
     </data>
 </root>

@@ -1,7 +1,9 @@
 ﻿@using System.Globalization
 @using wine_quality_mobile.Components.Common
 @using wine_quality_mobile.Resources.Languages
+@using wine_quality_mobile.Services.Users
 @inherits wine_quality_mobile.Components.Common.BaseComponent
+@inject IUsersService UsersService
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -35,6 +37,11 @@
                 <NavLink class="nav-link" href="GrapeSorts">
                     <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer["grape-sorts.header"]
                 </NavLink>
+            </div>
+            <div class="nav-item px-3">
+                <button class="nav-link" @onclick="Logout" style="color: #fff">
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> @Localizer["Logout"]
+                </button>
             </div>
         }
         else
@@ -93,6 +100,12 @@
         States.AppState.CurrentCulture = language;
         
         NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+        return InvokeAsync(StateHasChanged);
+    }
+
+    public Task Logout()
+    {
+        UsersService.Logout();
         return InvokeAsync(StateHasChanged);
     }
 }

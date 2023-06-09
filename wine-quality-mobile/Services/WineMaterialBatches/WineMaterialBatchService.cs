@@ -76,4 +76,32 @@ public class WineMaterialBatchService : IWineMaterialBatchService
         var result = JsonConvert.DeserializeObject<WineMaterialBatchPhaseParameterChartDataResult>(responseContent);
         return result;
     }
+
+    public async Task CreateAsync(CreateWineMaterialBatchRequest request, CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(request);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await _httpClient.PostAsync(_httpClient.BaseAddress, data, cancellationToken);
+        
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to create wine material batch");
+    }
+
+    public async Task UpdateAsync(UpdateWineMaterialBatchRequest request, CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(request);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await _httpClient.PutAsync($"{_httpClient.BaseAddress}/{request.Id}", data, cancellationToken);
+        
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to update wine material batch");
+    }
+
+    public async Task DeleteAsync(string id, CancellationToken cancellationToken = default)
+    {
+        var response = await _httpClient.DeleteAsync($"{_httpClient.BaseAddress}/{id}", cancellationToken);
+        
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to delete wine material batch");
+    }
 }

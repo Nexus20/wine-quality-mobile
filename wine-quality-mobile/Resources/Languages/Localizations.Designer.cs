@@ -60,11 +60,20 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add new.
+        /// </summary>
+        internal static string common_add {
+            get {
+                return ResourceManager.GetString("common.add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created at.
         /// </summary>
-        internal static string common_created_at {
+        internal static string common_createdAt {
             get {
-                return ResourceManager.GetString("common_created_at", resourceCulture);
+                return ResourceManager.GetString("common.createdAt", resourceCulture);
             }
         }
         
@@ -100,16 +109,16 @@ namespace wine_quality_mobile.Resources.Languages {
         /// </summary>
         internal static string common_loading {
             get {
-                return ResourceManager.GetString("common_loading", resourceCulture);
+                return ResourceManager.GetString("common.loading", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Updated at.
         /// </summary>
-        internal static string common_updated_at {
+        internal static string common_updatedAt {
             get {
-                return ResourceManager.GetString("common_updated_at", resourceCulture);
+                return ResourceManager.GetString("common.updatedAt", resourceCulture);
             }
         }
         
@@ -281,6 +290,87 @@ namespace wine_quality_mobile.Resources.Languages {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new parameter.
+        /// </summary>
+        internal static string parameters_create_header {
+            get {
+                return ResourceManager.GetString("parameters.create.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm parameter deletion.
+        /// </summary>
+        internal static string parameters_delete_header {
+            get {
+                return ResourceManager.GetString("parameters.delete.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this parameter? This action cannot be undone..
+        /// </summary>
+        internal static string parameters_delete_warning {
+            get {
+                return ResourceManager.GetString("parameters.delete.warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter details.
+        /// </summary>
+        internal static string parameters_details_header {
+            get {
+                return ResourceManager.GetString("parameters.details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This parameter hasn&apos;t been linked to any phase yet..
+        /// </summary>
+        internal static string parameters_details_no_phases {
+            get {
+                return ResourceManager.GetString("parameters.details.no-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit parameter.
+        /// </summary>
+        internal static string parameters_edit_header {
+            get {
+                return ResourceManager.GetString("parameters.edit.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available wine process parameters.
+        /// </summary>
+        internal static string parameters_header {
+            get {
+                return ResourceManager.GetString("parameters.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string parameters_name {
+            get {
+                return ResourceManager.GetString("parameters.name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases.
+        /// </summary>
+        internal static string parameters_phases {
+            get {
+                return ResourceManager.GetString("parameters.phases", resourceCulture);
             }
         }
         
@@ -474,15 +564,6 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Wine material batch details.
-        /// </summary>
-        internal static string wine_material_batch_details_header {
-            get {
-                return ResourceManager.GetString("wine_material_batch_details_header", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Active phase.
         /// </summary>
         internal static string wine_material_batches_active_phase_header {
@@ -515,6 +596,51 @@ namespace wine_quality_mobile.Resources.Languages {
         internal static string wine_material_batches_active_phase_start_date {
             get {
                 return ResourceManager.GetString("wine-material-batches.active-phase.start-date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new wine material batch.
+        /// </summary>
+        internal static string wine_material_batches_create_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.create.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm wine material batch deletion.
+        /// </summary>
+        internal static string wine_material_batches_delete_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.delete.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this wine material batch? This action cannot be undone..
+        /// </summary>
+        internal static string wine_material_batches_delete_warning {
+            get {
+                return ResourceManager.GetString("wine-material-batches.delete.warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wine material batch details.
+        /// </summary>
+        internal static string wine_material_batches_details_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit wine material batch.
+        /// </summary>
+        internal static string wine_material_batches_edit_header {
+            get {
+                return ResourceManager.GetString("wine-material-batches.edit.header", resourceCulture);
             }
         }
         

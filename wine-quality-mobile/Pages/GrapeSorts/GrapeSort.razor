@@ -5,9 +5,11 @@
 
 @if (GrapeSortDetailsLoaded)
 {
+    <a class="btn btn-secondary" href="/GrapeSorts">@Localizer["common.back"]</a>
+    
     <p>@Localizer["grape_sort_name"]: @GrapeSortDetails.Name</p>
-    <p>@Localizer["common_created_at"]: @GrapeSortDetails.CreatedAt</p>
-    <p>@Localizer["common_updated_at"]: @GrapeSortDetails.UpdatedAt</p>
+    <p>@Localizer["common.createdAt"]: @GrapeSortDetails.CreatedAt</p>
+    <p>@Localizer["common.updatedAt"]: @GrapeSortDetails.UpdatedAt</p>
 
     <h4>@Localizer["grape_sort_phases"]</h4>
 
@@ -58,12 +60,13 @@
         </div>
     }
 
-    <a class="btn btn-primary" href="/GrapeSorts/@GrapeSortDetails.Id/Edit">@Localizer["common.edit"]</a>
-    <a class="btn btn-danger" href="/GrapeSorts/@GrapeSortDetails.Id/Delete">@Localizer["common.delete"]</a>
-    <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/WineMaterialBatches">@Localizer["grape_sorts_wine_material_batches"]</a>
-    <a class="btn btn-secondary" href="/GrapeSorts">@Localizer["common.back"]</a>
+    <div class="btn-group" role="group">
+        <a class="btn btn-primary" href="/GrapeSorts/@GrapeSortDetails.Id/Edit"><i class="fa-solid fa-pen-nib"></i></a>
+        <a class="btn btn-danger" href="/GrapeSorts/@GrapeSortDetails.Id/Delete"><i class="fa-solid fa-trash"></i></a>
+        <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/WineMaterialBatches">@Localizer["grape-sorts.details.wine-material-batches"]</a>
+    </div>
 }
 else
 {
-    <p>@Localizer["common_loading"]</p>
+    <p>@Localizer["common.loading"]</p>
 }

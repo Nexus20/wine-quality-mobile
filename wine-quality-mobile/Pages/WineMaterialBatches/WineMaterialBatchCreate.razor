@@ -1,0 +1,32 @@
+﻿@page "/GrapeSorts/{grapeSortId}/WineMaterialBatches/Create"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine-material-batches.create.header"]</h3>
+
+<div>
+    <a class="btn btn-primary" href="@($"/GrapeSorts/{GrapeSortId}/WineMaterialBatches")">@Localizer["common.back"]</a>
+</div>
+
+@if (_dataLoaded)
+{
+    <EditForm Model="@Request" OnValidSubmit="@CreateWineMaterialBatchAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <InputText class="form-control" id="name" @bind-Value="Request.Name" placeholder="Name" />
+        </div>
+        <div class="mb-3">
+            <InputDate class="form-control" id="harvestDate" @bind-Value="Request.HarvestDate" placeholder="Harvest Date" />
+        </div>
+        <div class="mb-3">
+            <InputText class="form-control" id="harvestLocation" @bind-Value="Request.HarvestLocation" placeholder="Harvest Location" />
+        </div>
+        <div>
+            <button class="btn btn-primary" type="submit">@Localizer["common.confirm"]</button>
+        </div>
+    </EditForm>
+}
+else
+{
+    <p>@Localizer["common.loading"]</p>
+}

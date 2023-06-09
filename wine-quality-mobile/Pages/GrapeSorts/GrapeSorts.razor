@@ -19,11 +19,11 @@
                 </h2>
                 <div id="@($"collapse{grapeSort.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{grapeSort.Id}")" data-bs-parent="#grapeSortAccordion">
                     <div class="accordion-body">
-                        <a href="/GrapeSorts/@grapeSort.Id/Edit" class="btn btn-primary">@Localizer["common.edit"]</a>
-                        <a href="/GrapeSorts/@grapeSort.Id/Delete" class="btn btn-danger">@Localizer["common.delete"]</a>
-                        <a href="/GrapeSorts/@grapeSort.Id" class="btn btn-secondary">@Localizer["common.details"]</a>
+                        <a href="/GrapeSorts/@grapeSort.Id/Edit" class="btn btn-primary"><i class="fa-solid fa-pen-nib"></i></a>
+                        <a href="/GrapeSorts/@grapeSort.Id/Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                        <a href="/GrapeSorts/@grapeSort.Id" class="btn btn-secondary"><i class="fa-solid fa-eye"></i></a>
                         <a href="/GrapeSorts/@grapeSort.Id/Phases/Edit" class="btn btn-secondary">@Localizer["grape-sorts.edit-phases.button"]</a>
-                        <a href="/GrapeSorts/@grapeSort.Id/WineMaterialBatches" class="btn btn-secondary">@Localizer["grape_sorts_wine_material_batches"]</a>
+                        <a href="/GrapeSorts/@grapeSort.Id/WineMaterialBatches" class="btn btn-secondary">@Localizer["grape-sorts.details.wine-material-batches"]</a>
                     </div>
                 </div>
             </div>
@@ -32,5 +32,5 @@
 }
 else
 {
-    <div>@Localizer["common_loading"]</div>
+    <div>@Localizer["common.loading"]</div>
 }

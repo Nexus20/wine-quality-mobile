@@ -1,4 +1,4 @@
-﻿using wine_quality_mobile.Models.Requests.ProcessPhaseTypes;
+﻿using wine_quality_mobile.Models.Requests.ProcessPhases;
 using wine_quality_mobile.Models.Results.ProcessPhases;
 
 namespace wine_quality_mobile.Services.Phases;
@@ -10,4 +10,5 @@ public interface IPhasesService
     Task CreatePhaseAsync(CreateProcessPhaseRequest createProcessPhaseRequest, CancellationToken cancellationToken = default);
     Task UpdateProcessPhaseAsync(UpdateProcessPhaseRequest updateProcessPhaseRequest, CancellationToken cancellationToken = default);
     Task DeleteProcessPhaseAsync(string phaseId, CancellationToken cancellationToken = default);
+    Task EditPhaseParametersAsync(EditPhaseParametersRequest request, CancellationToken cancellationToken = default);
 }

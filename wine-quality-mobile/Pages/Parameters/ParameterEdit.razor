@@ -1,0 +1,25 @@
+﻿@page "/Parameters/{parameterId}/Edit"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["parameters.edit.header"]</h3>
+
+@if (_parameterLoaded)
+{
+    <a class="btn btn-primary" href="/Parameters">@Localizer["common.back"]</a>
+
+    <EditForm Model="@UpdateProcessParameterRequest" OnValidSubmit="@EditParameter">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label class="form-label" for="name">Parameter Name</label>
+            <InputText id="name" class="form-control" @bind-Value="UpdateProcessParameterRequest.Name" />
+            <ValidationMessage For="@(() => UpdateProcessParameterRequest.Name)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">@Localizer["common.confirm"]</button>
+    </EditForm>
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

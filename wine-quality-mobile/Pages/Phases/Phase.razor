@@ -11,7 +11,7 @@
 
     <h4>@Localizer["phases_parameters"]</h4>
 
-    @if (_phase.Parameters.Any())
+    @if (!_phase.Parameters.Any())
     {
         <div>@Localizer["phases_no_parameters"]</div>
     }
@@ -25,8 +25,9 @@
         </ul>
     }
     
-    <a class="btn btn-primary" href="/Phases/@_phase.Id/edit">@Localizer["common.edit"]</a>
-    <a class="btn btn-danger" href="/Phases/@_phase.Id/delete">@Localizer["common.delete"]</a>
+    <a class="btn btn-primary" href="/Phases/@_phase.Id/Edit">@Localizer["common.edit"]</a>
+    <a href="/Phases/@_phase.Id/EditParameters" class="btn btn-secondary">@Localizer["phases.configure-parameters.button"]</a>
+    <a class="btn btn-danger" href="/Phases/@_phase.Id/Delete">@Localizer["common.delete"]</a>
     <a class="btn btn-secondary" href="/Phases">@Localizer["common.back"]</a>
 }
 else

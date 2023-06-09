@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
-using wine_quality_mobile.Models.Requests.ProcessPhaseTypes;
+using wine_quality_mobile.Models.Requests.ProcessPhases;
 using wine_quality_mobile.Services.Phases;
 
 namespace wine_quality_mobile.Pages.Phases;

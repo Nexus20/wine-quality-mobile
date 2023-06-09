@@ -1,6 +1,6 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
-using wine_quality_mobile.Models.Requests.ProcessPhaseTypes;
+using wine_quality_mobile.Models.Requests.ProcessPhases;
 using wine_quality_mobile.Models.Results.ProcessPhases;
 
 namespace wine_quality_mobile.Services.Phases;
@@ -66,5 +66,16 @@ public class PhasesService : IPhasesService
 
         if (!response.IsSuccessStatusCode)
             throw new Exception("Unable to delete phase");
+    }
+
+    public async Task EditPhaseParametersAsync(EditPhaseParametersRequest request, CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(request);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+        
+        var response = await _httpClient.PostAsync($"{_httpClient.BaseAddress}/edit_parameters", data, cancellationToken);
+        
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to edit phase parameters");
     }
 }

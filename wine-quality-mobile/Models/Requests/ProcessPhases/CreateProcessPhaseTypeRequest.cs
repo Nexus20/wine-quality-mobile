@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace wine_quality_mobile.Models.Requests.ProcessPhaseTypes;
+namespace wine_quality_mobile.Models.Requests.ProcessPhases;
 
 public class CreateProcessPhaseRequest
 {

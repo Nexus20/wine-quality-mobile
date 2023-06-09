@@ -1,0 +1,22 @@
+﻿@page "/Parameters/{parameterId}/Delete"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["parameters.delete.header"]</h3>
+
+@if (_parameterLoaded)
+{
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            @Localizer["parameters.delete.warning"]
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-danger" @onclick="DeleteParameter">@Localizer["common.confirm"]</button>
+            <a class="btn btn-primary" href="/Parameters">@Localizer["common.cancel"]</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

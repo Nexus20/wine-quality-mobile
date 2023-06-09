@@ -240,4 +240,52 @@
   <data name="wine_material_batch_details_header" xml:space="preserve">
     <value>Детальна інформація</value>
   </data>
+  <data name="grape-sorts.header" xml:space="preserve">
+    <value>Сорти винограду</value>
+  </data>
+    <data name="grape-sorts.name" xml:space="preserve">
+    <value>Назва</value>
+  </data>
+    <data name="grape-sorts.details.header" xml:space="preserve">
+    <value>Детальна інформація</value>
+  </data>
+    <data name="grape-sorts.details.phases" xml:space="preserve">
+    <value>Фази</value>
+  </data>
+    <data name="grape-sorts.details.wine-material-batches" xml:space="preserve">
+    <value>Партії винограду</value>
+  </data>
+    <data name="grape-sorts.create.header" xml:space="preserve">
+    <value>Створити новий сорт винограду</value>
+  </data>
+    <data name="grape-sorts.edit.header" xml:space="preserve">
+    <value>Редагувати сорт винограду</value>
+  </data>
+    <data name="grape-sorts.delete.header" xml:space="preserve">
+    <value>Підтвердити видалення сорту винограду</value>
+  </data>
+    <data name="grape-sorts.delete.warning" xml:space="preserve">
+    <value>Ви впевнені, що хочете видалити цей сорт винограду? Цю дію не можна скасувати.</value>
+  </data>
+    <data name="grape-sorts.edit-phases.button" xml:space="preserve">
+    <value>Налаштувати фази</value>
+  </data>
+    <data name="grape-sorts.edit-phases.header" xml:space="preserve">
+    <value>Налаштування фаз сорту</value>
+  </data>
+    <data name="grape-sorts.edit-phases.available-phases" xml:space="preserve">
+    <value>Доступні фази</value>
+  </data>
+    <data name="grape-sorts.edit-phases.grape-sort-phases" xml:space="preserve">
+    <value>Фази сорту</value>
+  </data>
+    <data name="grape-sorts.edit-phases.save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+    <data name="grape-sorts.edit-phases.saving" xml:space="preserve">
+    <value>Збереження...</value>
+  </data>
+    <data name="grape-sorts.edit-phases.saved" xml:space="preserve">
+    <value>Порядок фаз збережено</value>
+  </data>
 </root>

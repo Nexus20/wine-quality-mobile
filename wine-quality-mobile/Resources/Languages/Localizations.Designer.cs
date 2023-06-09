@@ -132,6 +132,150 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create new grape sort.
+        /// </summary>
+        internal static string grape_sorts_create_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.create.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm grape sort deletion.
+        /// </summary>
+        internal static string grape_sorts_delete_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.delete.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this grape sort? This action cannot be undone..
+        /// </summary>
+        internal static string grape_sorts_delete_warning {
+            get {
+                return ResourceManager.GetString("grape-sorts.delete.warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grape sort details.
+        /// </summary>
+        internal static string grape_sorts_details_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases.
+        /// </summary>
+        internal static string grape_sorts_details_phases {
+            get {
+                return ResourceManager.GetString("grape-sorts.details.phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wine material batches.
+        /// </summary>
+        internal static string grape_sorts_details_wine_material_batches {
+            get {
+                return ResourceManager.GetString("grape-sorts.details.wine-material-batches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit grape sort.
+        /// </summary>
+        internal static string grape_sorts_edit_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available phases.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_available_phases {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.available-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit phases.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_button {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grape sort phases.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_grape_sort_phases {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.grape-sort-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit grape sort phases.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_save {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases order saved.
+        /// </summary>
+        internal static string grape_sorts_edit_phases_saved {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving....
+        /// </summary>
+        internal static string grape_sorts_edit_phases_saving {
+            get {
+                return ResourceManager.GetString("grape-sorts.edit-phases.saving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available grape sorts.
+        /// </summary>
+        internal static string grape_sorts_header {
+            get {
+                return ResourceManager.GetString("grape-sorts.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string grape_sorts_name {
+            get {
+                return ResourceManager.GetString("grape-sorts.name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {

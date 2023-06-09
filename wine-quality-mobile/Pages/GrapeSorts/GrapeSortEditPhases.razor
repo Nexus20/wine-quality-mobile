@@ -1,0 +1,49 @@
+﻿@page "/GrapeSorts/{grapeSortId}/Phases/Edit"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>GrapeSortEditPhases</h3>
+
+@if (_dataLoaded)
+{
+    <div>
+        <h3>Available phases:</h3>
+        <ul>
+            @foreach (var phase in _availablePhases)
+            {
+                <li>
+                    @phase.Name 
+                    <button @onclick="() => MoveToAssigned(phase)">-></button>
+                </li>
+            }
+        </ul>
+    </div>
+    <div>
+        <h3>Assigned phases:</h3>
+        <ul>
+            @for (var i = 0; i < _grapeSortPhases.Count; i++)
+            {
+                var phase = _grapeSortPhases[i];
+                <li>
+                    @phase.Name 
+                    <button @onclick="() => MoveToAvailable(phase)">-</button>
+                    @if (i != 0)
+                    {
+                        var tmp = i;
+                        <button @onclick="() => MoveUp(tmp)">Up</button>
+                    }
+                    @if (i != _grapeSortPhases.Count - 1)
+                    {
+                        var tmp = i;
+                        <button @onclick="() => MoveDown(tmp)">Down</button>
+                    }
+                </li>
+            }
+        </ul>
+    </div>
+    <div>
+        <button @onclick="SavePhasesOrderAsync">Save</button>
+    </div>
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

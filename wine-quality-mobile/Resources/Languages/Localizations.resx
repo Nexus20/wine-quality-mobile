@@ -121,9 +121,9 @@
     <data name="common.edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-    <data name="phases_header" xml:space="preserve">
-    <value>Phases</value>
-  </data>
+    <data name="phases.header" xml:space="preserve">
+        <value>Process phases</value>
+    </data>
     <data name="en-US" xml:space="preserve">
         <value>English</value>
     </data>
@@ -141,6 +141,12 @@
     </data>
     <data name="common.add" xml:space="preserve">
         <value>Add new</value>
+    </data>
+    <data name="common.back" xml:space="preserve">
+        <value>Back</value>
+    </data>
+    <data name="common.confirm" xml:space="preserve">
+        <value>Confirm</value>
     </data>
     <data name="phases_parameters" xml:space="preserve">
         <value>Parameters</value>
@@ -174,9 +180,6 @@
     </data>
     <data name="wine-material-batches.active-phase.phase" xml:space="preserve">
         <value>Phase</value>
-    </data>
-    <data name="wine-material-batches.active-phase.start-date" xml:space="preserve">
-        <value>Start date</value>
     </data>
     <data name="wine-material-batches.active-phase.readings" xml:space="preserve">
         <value>Readings</value>
@@ -247,73 +250,91 @@
     <data name="grape-sorts.name" xml:space="preserve">
       <value>Name</value>
     </data>
-        <data name="grape-sorts.details.header" xml:space="preserve">
+    <data name="grape-sorts.details.header" xml:space="preserve">
       <value>Grape sort details</value>
     </data>
-        <data name="grape-sorts.details.phases" xml:space="preserve">
+    <data name="grape-sorts.details.phases" xml:space="preserve">
       <value>Phases</value>
     </data>
-        <data name="grape-sorts.details.wine-material-batches" xml:space="preserve">
+    <data name="grape-sorts.details.wine-material-batches" xml:space="preserve">
       <value>Wine material batches</value>
     </data>
-        <data name="grape-sorts.create.header" xml:space="preserve">
+    <data name="grape-sorts.create.header" xml:space="preserve">
       <value>Create new grape sort</value>
     </data>
-        <data name="grape-sorts.edit.header" xml:space="preserve">
+    <data name="grape-sorts.edit.header" xml:space="preserve">
       <value>Edit grape sort</value>
     </data>
-        <data name="grape-sorts.delete.header" xml:space="preserve">
+    <data name="grape-sorts.delete.header" xml:space="preserve">
       <value>Confirm grape sort deletion</value>
     </data>
-        <data name="grape-sorts.delete.warning" xml:space="preserve">
+    <data name="grape-sorts.delete.warning" xml:space="preserve">
       <value>Are you sure you want to delete this grape sort? This action cannot be undone.</value>
     </data>
-        <data name="grape-sorts.edit-phases.button" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.button" xml:space="preserve">
       <value>Edit phases</value>
     </data>
-        <data name="grape-sorts.edit-phases.header" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.header" xml:space="preserve">
       <value>Edit grape sort phases</value>
     </data>
-        <data name="grape-sorts.edit-phases.available-phases" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.available-phases" xml:space="preserve">
       <value>Available phases</value>
     </data>
-        <data name="grape-sorts.edit-phases.grape-sort-phases" xml:space="preserve">
-      <value>Grape sort phases</value>
+    <data name="grape-sorts.edit-phases.grape-sort-phases" xml:space="preserve">
+      <value>Assigned grape sort phases</value>
     </data>
-        <data name="grape-sorts.edit-phases.save" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.save" xml:space="preserve">
       <value>Save</value>
     </data>
-        <data name="grape-sorts.edit-phases.saving" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.saving" xml:space="preserve">
       <value>Saving...</value>
     </data>
-        <data name="grape-sorts.edit-phases.saved" xml:space="preserve">
+    <data name="grape-sorts.edit-phases.saved" xml:space="preserve">
       <value>Phases order saved</value>
     </data>
     <data name="parameters.header" xml:space="preserve">
       <value>Available wine process parameters</value>
     </data>
-        <data name="parameters.name" xml:space="preserve">
+    <data name="parameters.name" xml:space="preserve">
       <value>Name</value>
     </data>
-        <data name="parameters.phases" xml:space="preserve">
+    <data name="parameters.phases" xml:space="preserve">
       <value>Phases</value>
     </data>
-        <data name="parameters.details.header" xml:space="preserve">
+    <data name="parameters.details.header" xml:space="preserve">
       <value>Parameter details</value>
     </data>
-        <data name="parameters.details.no-phases" xml:space="preserve">
+    <data name="parameters.details.no-phases" xml:space="preserve">
       <value>This parameter hasn't been linked to any phase yet.</value>
     </data>
-        <data name="parameters.create.header" xml:space="preserve">
+    <data name="parameters.create.header" xml:space="preserve">
       <value>Create new parameter</value>
     </data>
-        <data name="parameters.edit.header" xml:space="preserve">
+    <data name="parameters.edit.header" xml:space="preserve">
       <value>Edit parameter</value>
     </data>
-        <data name="parameters.delete.header" xml:space="preserve">
+    <data name="parameters.delete.header" xml:space="preserve">
       <value>Confirm parameter deletion</value>
     </data>
-        <data name="parameters.delete.warning" xml:space="preserve">
+    <data name="parameters.delete.warning" xml:space="preserve">
       <value>Are you sure you want to delete this parameter? This action cannot be undone.</value>
+    </data>
+    <data name="phases.configure-parameters.button" xml:space="preserve">
+        <value>Configure parameters</value>
+    </data>
+    <data name="wine-material-batches.phases.sensors" xml:space="preserve">
+        <value>Sensors</value>
+    </data>
+    <data name="wine-material-batches.phases.assign-sensors" xml:space="preserve">
+        <value>Assign sensors</value>
+    </data>
+    <data name="wine-material-batches.phases.details" xml:space="preserve">
+        <value>Phase details</value>
+    </data>
+    <data name="wine-material-batches.active-phase.start-date" xml:space="preserve">
+        <value>Start date</value>
+    </data>
+    <data name="wine-material-batches.active-phase.end-date" xml:space="preserve">
+        <value>End date</value>
     </data>
 </root>

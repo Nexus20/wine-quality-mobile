@@ -26,8 +26,8 @@ public partial class WineMaterialBatchPhaseDetails
     private Dictionary<DeviceStatus, string> Statuses { get; set; }
 
     private bool _wineMaterialBatchGrapeSortPhaseLoaded;
-    
-    ChartDialog ChartDialogRef;
+
+    private ChartDialog _chartDialogRef;
     
     protected override async Task OnInitializedAsync()
     {
@@ -89,8 +89,8 @@ public partial class WineMaterialBatchPhaseDetails
         await SignalRService.DisposeAsync();
     }
 
-    private void OpenChartDialog(WineMaterialBatchGrapeSortPhaseParameterDetailsResult parameter)
+    private async Task OpenChartDialog(WineMaterialBatchGrapeSortPhaseParameterDetailsResult parameter)
     {
-        ChartDialogRef.Show(parameter);
+        await _chartDialogRef.Show(parameter);
     }
 }

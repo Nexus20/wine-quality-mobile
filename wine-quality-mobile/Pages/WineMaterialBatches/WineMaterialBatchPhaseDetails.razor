@@ -3,7 +3,7 @@
 @using wine_quality_mobile.Components;
 @inherits wine_quality_mobile.Components.Common.BaseComponent
 @implements IAsyncDisposable
-<h3>WineMaterialBatchPhaseDetails</h3>
+<h3>@Localizer["wine-material-batches.phases.details"]</h3>
 
 @if (_wineMaterialBatchGrapeSortPhaseLoaded)
 {
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    <ChartDialog @ref="ChartDialogRef" />
+    <ChartDialog @ref="_chartDialogRef" />
 }
 else
 {

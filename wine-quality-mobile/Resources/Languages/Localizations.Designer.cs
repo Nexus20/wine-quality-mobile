@@ -69,6 +69,24 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string common_back {
+            get {
+                return ResourceManager.GetString("common.back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        internal static string common_confirm {
+            get {
+                return ResourceManager.GetString("common.confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created at.
         /// </summary>
         internal static string common_createdAt {
@@ -222,7 +240,7 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Grape sort phases.
+        ///   Looks up a localized string similar to Assigned grape sort phases.
         /// </summary>
         internal static string grape_sorts_edit_phases_grape_sort_phases {
             get {
@@ -384,6 +402,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configure parameters.
+        /// </summary>
+        internal static string phases_configure_parameters_button {
+            get {
+                return ResourceManager.GetString("phases.configure-parameters.button", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phase details.
         /// </summary>
         internal static string phases_details_header {
@@ -393,11 +420,11 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Phases.
+        ///   Looks up a localized string similar to Process phases.
         /// </summary>
         internal static string phases_header {
             get {
-                return ResourceManager.GetString("phases_header", resourceCulture);
+                return ResourceManager.GetString("phases.header", resourceCulture);
             }
         }
         
@@ -564,6 +591,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End date.
+        /// </summary>
+        internal static string wine_material_batches_active_phase_end_date {
+            get {
+                return ResourceManager.GetString("wine-material-batches.active-phase.end-date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active phase.
         /// </summary>
         internal static string wine_material_batches_active_phase_header {
@@ -672,6 +708,24 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assign sensors.
+        /// </summary>
+        internal static string wine_material_batches_phases_assign_sensors {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.assign-sensors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase details.
+        /// </summary>
+        internal static string wine_material_batches_phases_details {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End date.
         /// </summary>
         internal static string wine_material_batches_phases_end_date {
@@ -686,6 +740,15 @@ namespace wine_quality_mobile.Resources.Languages {
         internal static string wine_material_batches_phases_header {
             get {
                 return ResourceManager.GetString("wine-material-batches.phases.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sensors.
+        /// </summary>
+        internal static string wine_material_batches_phases_sensors {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.sensors", resourceCulture);
             }
         }
         

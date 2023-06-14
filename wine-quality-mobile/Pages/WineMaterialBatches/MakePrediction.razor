@@ -1,0 +1,22 @@
+﻿@page "/WineMaterialBatches/{wineMaterialBatchId}/Phases/{wineMaterialBatchGrapeSortPhaseId}/Predict"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine-material-batch-phases.predict-quality.header"]</h3>
+
+@if (_dataLoaded)
+{
+    <div class="mb-3">
+        <a href="/WineMaterialBatches/@WineMaterialBatchId/Phases/@WineMaterialBatchGrapeSortPhaseId">@Localizer["common.back"]</a>
+    </div>
+    
+    <div class="mb-3">
+        <select class="form-select" name="" id="modelSelect" @onchange="ModelSelected">
+            @foreach (var model in _models)
+            {
+                <option value="@model.Id">@model.ModelName @Localizer["wine-material-batch-phases.predict-quality.accuracy"] @model.Accuracy</option>
+            }
+        </select>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" @onclick="PredictAsync">@Localizer["common.confirm"]</button>
+    </div>
+}

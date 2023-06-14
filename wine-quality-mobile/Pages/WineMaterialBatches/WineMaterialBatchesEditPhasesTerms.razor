@@ -1,0 +1,31 @@
+﻿@page "/WineMaterialBatches/{WineMaterialBatchId}/EditPhasesTerms"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine-material-batches.phases.edit-terms"]</h3>
+
+@if (_dataLoaded)
+{
+    <div class="mb-3">
+        <a href="/WineMaterialBatches/@WineMaterialBatchId" class="btn btn-primary">@Localizer["common.back"]</a>
+    </div>
+    
+    @foreach(var phase in _wineMaterialBatch.Phases)
+    {
+        <h4>@phase.Phase.PhaseName</h4>
+        <div class="mb-3">
+            <label class="form-label" for="@($"startDate-{phase.Id}")">@Localizer["wine-material-batches.phases.start-date"]</label>
+            <InputDate class="form-control" id="@($"startDate-{phase.Id}")" @bind-Value="phase.StartDate" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="@($"endDate-{phase.Id}")">@Localizer["wine-material-batches.phases.end-date"]</label>
+            <InputDate class="form-control" id="@($"endDate-{phase.Id}")" @bind-Value="phase.EndDate" />
+        </div>
+    }
+    
+    <div class="mb-3">
+        <button class="btn btn-primary" @onclick="SaveAsync">@Localizer["common.confirm"]</button>
+    </div>
+}
+else
+{
+    <p>@Localizer["common.loading"]</p>
+}

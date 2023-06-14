@@ -10,5 +10,5 @@ public class PredictQualityRequest
     [Required]
     public string WineMaterialBatchGrapeSortPhaseId { get; set; } = null!;
     
-    public Dictionary<string, double>? ParametersValues { get; set; }
+    public Dictionary<string, double> ParametersValues { get; set; }
 }

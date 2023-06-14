@@ -10,6 +10,11 @@
     <div class="container">
         <div class="row mb-3">
             <div class="col-12">
+                <a href="/WineMaterialBatches/@WineMaterialBatchId" class="btn btn-primary">@Localizer["common.back"]</a>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
                 <h1>@WineMaterialBatchDetails.Name</h1>
                 <p>@WineMaterialBatchDetails.GrapeSort.Name</p>
                 <p>Phase: @WineMaterialBatchGrapeSortPhase.Phase.PhaseName</p>
@@ -61,7 +66,11 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <!-- Сюда можно добавить информацию о статусе фазы и действия для пользователя -->
+                @if (WineMaterialBatchGrapeSortPhase.IsActive)
+                {
+                    <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchDetails.Id/Phases/@WineMaterialBatchGrapeSortPhaseId/Predict">@Localizer["wine-material-batch-phases.predict-quality"]</a>
+                    <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchDetails.Id/Phases/@WineMaterialBatchGrapeSortPhaseId/Predictions/History">@Localizer["wine-material-batch-phases.prediction-history.header"]</a>
+                }
             </div>
         </div>
     </div>

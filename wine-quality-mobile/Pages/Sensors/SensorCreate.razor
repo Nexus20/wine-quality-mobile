@@ -1,0 +1,41 @@
+﻿@page "/Sensors/Create"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["sensors.create.header"]</h3>
+
+@if (_dataLoaded)
+{
+    <div class="mb-3">
+        <a href="/Sensors" class="btn btn-primary">@Localizer["common.back"]</a>
+    </div>
+    
+    <EditForm Model="_createSensorRequest" OnValidSubmit="CreateSensorAsync">
+        <DataAnnotationsValidator />
+    
+        <div class="mb-3">
+            <label class="form-label" for="phase">@Localizer["sensors.phase"]</label>
+            <InputSelect class="form-select" id="phase" @bind-Value="_createSensorRequest.PhaseId">
+                @foreach (var phase in _phases)
+                {
+                    <option value="@phase.Id">@phase.Name</option>
+                }
+            </InputSelect>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label" for="parameter">@Localizer["sensors.parameter"]</label>
+            <InputSelect class="form-select" id="parameter" @bind-Value="_createSensorRequest.ParameterId">
+                @foreach (var parameter in _parameters)
+                {
+                    <option value="@parameter.Id">@parameter.Name</option>
+                }
+            </InputSelect>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">@Localizer["common.confirm"]</button>
+    </EditForm>
+
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

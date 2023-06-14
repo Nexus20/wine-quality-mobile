@@ -1,6 +1,9 @@
 ﻿@using ChartJs.Blazor
+@using Microsoft.Extensions.Localization
 @using wine_quality_mobile.Enums
+@using wine_quality_mobile.Resources.Languages
 @inherits LayoutComponentBase
+@inject IStringLocalizer<Localizations> Localizer
 
 <div class="modal @(IsVisible ? "show" : "fade")" id="chart-modal" tabindex="-1" aria-labelledby="chart-modal-label" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
@@ -19,8 +22,8 @@
                         <option value="@type">@type.ToString()</option>
                     }
                 </select>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@Localizer["common.close"]</button>
+                <button type="button" class="btn btn-primary">@Localizer["common.confirm"]</button>
             </div>
         </div>
     </div>

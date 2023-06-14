@@ -1,0 +1,22 @@
+﻿@page "/Sensors/{sensorId}/Delete"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["sensors.delete.header"]</h3>
+
+@if (_dataLoaded)
+{
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            @Localizer["sensors.delete.warning"]
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-danger" @onclick="DeleteSensor">@Localizer["common.confirm"]</button>
+            <a class="btn btn-primary" href="/Sensors">@Localizer["common.cancel"]</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>@Localizer["common.loading"]...</p>
+}

@@ -38,6 +38,6 @@ public partial class GrapeSortPhaseEditStandard
         };
         
         await GrapeSortService.UpdateStandardAsync(request);
-        NavigationManager.NavigateTo($"/GrapeSorts/{GrapeSortId}", true);
+        NavigationManager.NavigateTo($"/GrapeSorts/{GrapeSortId}");
     }
 }

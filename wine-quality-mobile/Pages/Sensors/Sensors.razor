@@ -1,0 +1,41 @@
+﻿@page "/Sensors"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["sensors.header"]</h3>
+
+@if (_dataLoaded)
+{
+    <div> 
+        <a class="btn btn-primary" href="/Sensors/Create">@Localizer["common.add"]</a>
+    </div>
+    
+    @foreach (var sensor in _sensors)
+    {
+        <div class="accordion" id="sensorAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="@($"heading{sensor.Id}")">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="@($"#collapse{sensor.Id}")" aria-expanded="false" aria-controls="@($"collapse{sensor.Id}")">
+                        @sensor.Id
+                    </button>
+                </h2>
+                <div id="@($"collapse{sensor.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{sensor.Id}")" data-bs-parent="#sensorAccordion">
+                    <div class="accordion-body">
+                        <div>
+                            @Localizer["sensors.phase"]: @sensor.PhaseName
+                            @Localizer["sensors.parameter"]: @sensor.ParameterName
+                            @Localizer["sensors.status"]: @_statuses[sensor.Status]
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" @onclick="() => CopyDeviceId(sensor.Id)">@Localizer["sensors.copy-device-id"]</button>
+                            <button class="btn btn-primary" @onclick="() => CopyDeviceKey(sensor.DeviceKey)">@Localizer["sensors.copy-device-key"]</button>
+                            <a href="/Sensors/@sensor.Id/Delete" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div>@Localizer["common.loading"]</div>
+}

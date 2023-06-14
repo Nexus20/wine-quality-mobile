@@ -1,21 +1,22 @@
 ﻿@page "/GrapeSorts/{grapeSortId}/Standards/{standardId}/Edit"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
-<h3>GrapeSortPhaseEditStandard</h3>
+<h3>@Localizer["grape-sorts-phases.edit-standard.header"]</h3>
 
-@if(StandardLoaded) {
-
-
-<form>
-    <div class="mb-3">
-        <label for="lowerBound" class="form-label">Lower Bound</label>
-        <input type="number" class="form-control" id="lowerBound" @bind="Standard.LowerBound">
-    </div>
-    <div class="mb-3">
-        <label for="upperBound" class="form-label">Upper Bound</label>
-        <input type="number" class="form-control" id="upperBound" @bind="Standard.UpperBound">
-    </div>
-    <button type="submit" class="btn btn-primary" @onclick="SaveAsync">@Localizer["common.confirm"]</button>
-</form>
-} else {
+@if (StandardLoaded)
+{
+    <form>
+        <div class="mb-3">
+            <label for="lowerBound" class="form-label">@Localizer["grape-sorts-phases.standard.lower-bound"]</label>
+            <input type="number" class="form-control" id="lowerBound" @bind="Standard.LowerBound">
+        </div>
+        <div class="mb-3">
+            <label for="upperBound" class="form-label">@Localizer["grape-sorts-phases.standard.upper-bound"]</label>
+            <input type="number" class="form-control" id="upperBound" @bind="Standard.UpperBound">
+        </div>
+        <button type="submit" class="btn btn-primary" @onclick="SaveAsync">@Localizer["common.confirm"]</button>
+    </form>
+}
+else
+{
     <p>@Localizer["common.loading"]</p>
 }

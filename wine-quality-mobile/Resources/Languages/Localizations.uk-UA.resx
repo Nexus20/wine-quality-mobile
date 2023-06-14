@@ -143,13 +143,28 @@
     <data name="phases.header" xml:space="preserve">
     <value>Фази процесу виробництва</value>
   </data>
+    <data name="phases.name" xml:space="preserve">
+      <value>Назва</value>
+    </data>
+    <data name="phases.create.header" xml:space="preserve">
+      <value>Створити нову фазу</value>
+    </data>
+    <data name="phases.edit.header" xml:space="preserve">
+      <value>Редагувати фазу</value>
+    </data>
+    <data name="phases.delete.header" xml:space="preserve">
+      <value>Підтвердити видалення фази</value>
+    </data>
+    <data name="phases.delete.warning" xml:space="preserve">
+      <value>Ви впевнені, що хочете видалити цю фазу? Цю дію не можна скасувати.</value>
+    </data>
     <data name="en-US" xml:space="preserve">
     <value>Англійська</value>
   </data>
     <data name="uk-UA" xml:space="preserve">
     <value>Українська</value>
   </data>
-    <data name="phases_details_header" xml:space="preserve">
+    <data name="phases.details.header" xml:space="preserve">
     <value>Деталі фази</value>
   </data>
     <data name="common.createdAt" xml:space="preserve">
@@ -161,7 +176,7 @@
     <data name="common.add" xml:space="preserve">
     <value>Додати</value>
   </data>
-    <data name="phases_parameters" xml:space="preserve">
+    <data name="phases.parameters" xml:space="preserve">
     <value>Параметри</value>
   </data>
     <data name="common.loading" xml:space="preserve">
@@ -180,7 +195,7 @@
     <value>Дата початку</value>
   </data>
     <data name="wine-material-batches.phases.end-date" xml:space="preserve">
-    <value>Дата закінченн</value>
+    <value>Дата закінчення</value>
   </data>
     <data name="wine-material-batches.phases.header" xml:space="preserve">
     <value>Фази</value>
@@ -341,6 +356,9 @@
     <data name="common.confirm" xml:space="preserve">
     <value>Підтвердити</value>
   </data>
+    <data name="common.close" xml:space="preserve">
+        <value>Закрити</value>
+    </data>
     <data name="phases.configure-parameters.button" xml:space="preserve">
     <value>Налаштувати параметри</value>
   </data>
@@ -355,5 +373,92 @@
     </data>
     <data name="wine-material-batches.phases.assign-sensors" xml:space="preserve">
         <value>Призначити сенсор</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality" xml:space="preserve">
+        <value>Зробити передбачення якості</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality.header" xml:space="preserve">
+        <value>Оберіть модель для передбачення якості</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality.accuracy" xml:space="preserve">
+        <value>Точність</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.header" xml:space="preserve">
+        <value>Дателі передбачення</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.quality" xml:space="preserve">
+        <value>Передбачена якість</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.explanation" xml:space="preserve">
+        <value>Пояснення</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.reason" xml:space="preserve">
+        <value>Причина</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.value" xml:space="preserve">
+        <value>Значення показника</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.severity" xml:space="preserve">
+        <value>Ступінь впливу</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-history.header" xml:space="preserve">
+        <value>Історія передбачень</value>
+    </data>
+    <data name="logout" xml:space="preserve">
+        <value>Вихід</value>
+    </data>
+    <data name="common.cancel" xml:space="preserve">
+        <value>Відміна</value>
+    </data>
+    <data name="phases.configure-parameters.header" xml:space="preserve">
+        <value>Налаштувати параметри фази</value>
+    </data>
+    <data name="phases.configure-parameters.available-parameters" xml:space="preserve">
+        <value>Доступні параметри</value>
+    </data>
+    <data name="phases.configure-parameters.linked-parameters" xml:space="preserve">
+        <value>Призначені параметри</value>
+    </data>
+    <data name="parameters.no-phases" xml:space="preserve">
+        <value>Параметр ще не призначено до жодної фази.</value>
+    </data>
+    <data name="grape-sorts.phases" xml:space="preserve">
+        <value>Фази</value>
+    </data>
+    <data name="grape-sorts.no-phases" xml:space="preserve">
+        <value>Для цього сорту винограду немає налаштованих фаз</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard" xml:space="preserve">
+        <value>Створити стандарт</value>
+    </data>
+    <data name="grape-sorts-phases.edit-standard" xml:space="preserve">
+        <value>Редагувати стандарт</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard.header" xml:space="preserve">
+        <value>Створити стандарт</value>
+    </data>
+    <data name="grape-sorts-phases.edit-standard.header" xml:space="preserve">
+        <value>Редагувати стандарт</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard.select-parameter" xml:space="preserve">
+        <value>Обрати параметр</value>
+    </data>
+    <data name="grape-sorts-phases.standard.lower-bound" xml:space="preserve">
+        <value>Нижня межа</value>
+    </data>
+    <data name="grape-sorts-phases.standard.upper-bound" xml:space="preserve">
+        <value>Верхня межа</value>
+    </data>
+    <data name="grape-sorts-phases.order" xml:space="preserve">
+        <value>Порядок проходження</value>
+    </data>
+    <data name="grape-sorts-phases.parameters" xml:space="preserve">
+        <value>Параметри</value>
+    </data>
+    <data name="wine-material-batches.no-active-phase.phase" xml:space="preserve">
+        <value>Немає активної фази</value>
+    </data>
+    <data name="wine-material-batches.phases.edit-terms" xml:space="preserve">
+        <value>Редагувати терміни</value>
     </data>
 </root>

@@ -124,14 +124,32 @@
     <data name="phases.header" xml:space="preserve">
         <value>Process phases</value>
     </data>
+    <data name="phases.name" xml:space="preserve">
+      <value>Name</value>
+    </data>
+    <data name="phases.create.header" xml:space="preserve">
+      <value>Create new phase</value>
+    </data>
+    <data name="phases.edit.header" xml:space="preserve">
+      <value>Edit phase</value>
+    </data>
+    <data name="phases.delete.header" xml:space="preserve">
+      <value>Confirm phase deletion</value>
+    </data>
+    <data name="phases.delete.warning" xml:space="preserve">
+      <value>Are you sure you want to delete this phase? This action cannot be undone.</value>
+    </data>
     <data name="en-US" xml:space="preserve">
         <value>English</value>
     </data>
     <data name="uk-UA" xml:space="preserve">
         <value>Ukrainian</value>
     </data>
-    <data name="phases_details_header" xml:space="preserve">
+    <data name="phases.details.header" xml:space="preserve">
         <value>Phase details</value>
+    </data>
+    <data name="common.cancel" xml:space="preserve">
+        <value>Cancel</value>
     </data>
     <data name="common.createdAt" xml:space="preserve">
         <value>Created at</value>
@@ -148,7 +166,10 @@
     <data name="common.confirm" xml:space="preserve">
         <value>Confirm</value>
     </data>
-    <data name="phases_parameters" xml:space="preserve">
+    <data name="common.close" xml:space="preserve">
+        <value>Close</value>
+    </data>
+    <data name="phases.parameters" xml:space="preserve">
         <value>Parameters</value>
     </data>
     <data name="wine-material-batches.create.header" xml:space="preserve">
@@ -247,12 +268,6 @@
     <data name="grape-sorts.header" xml:space="preserve">
       <value>Available grape sorts</value>
     </data>
-    <data name="grape-sorts.name" xml:space="preserve">
-      <value>Name</value>
-    </data>
-    <data name="grape-sorts.details.header" xml:space="preserve">
-      <value>Grape sort details</value>
-    </data>
     <data name="grape-sorts.details.phases" xml:space="preserve">
       <value>Phases</value>
     </data>
@@ -336,5 +351,95 @@
     </data>
     <data name="wine-material-batches.active-phase.end-date" xml:space="preserve">
         <value>End date</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality" xml:space="preserve">
+        <value>Predict quality</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality.header" xml:space="preserve">
+        <value>Select machine learning model</value>
+    </data>
+    <data name="wine-material-batch-phases.predict-quality.accuracy" xml:space="preserve">
+        <value>Accuracy</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.header" xml:space="preserve">
+        <value>Prediction details</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.quality" xml:space="preserve">
+        <value>Quality</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.explanation" xml:space="preserve">
+        <value>Explanation</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.reason" xml:space="preserve">
+        <value>Reason</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.value" xml:space="preserve">
+        <value>Value</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-details.severity" xml:space="preserve">
+        <value>Severity</value>
+    </data>
+    <data name="wine-material-batch-phases.prediction-history.header" xml:space="preserve">
+        <value>Prediction history</value>
+    </data>
+    <data name="logout" xml:space="preserve">
+        <value>Logout</value>
+    </data>
+    <data name="phases.configure-parameters.header" xml:space="preserve">
+        <value>Configure phase parameters</value>
+    </data>
+    <data name="phases.configure-parameters.available-parameters" xml:space="preserve">
+        <value>Available parameters</value>
+    </data>
+    <data name="phases.configure-parameters.linked-parameters" xml:space="preserve">
+        <value>Linked parameters</value>
+    </data>
+    <data name="parameters.no-phases" xml:space="preserve">
+        <value>This parameter hasn't been linked to any phase yet.</value>
+    </data>
+    <data name="grape-sorts.phases" xml:space="preserve">
+        <value>Phases</value>
+    </data>
+    <data name="grape-sorts.no-phases" xml:space="preserve">
+        <value>No phases are configured for this sort</value>
+    </data>
+    <data name="grape-sorts.name" xml:space="preserve">
+        <value>Name</value>
+    </data>
+    <data name="grape-sorts.details.header" xml:space="preserve">
+        <value>Grape sort details</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard" xml:space="preserve">
+        <value>Create standard</value>
+    </data>
+    <data name="grape-sorts-phases.edit-standard" xml:space="preserve">
+        <value>Edit standard</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard.header" xml:space="preserve">
+        <value>Create standard</value>
+    </data>
+    <data name="grape-sorts-phases.edit-standard.header" xml:space="preserve">
+        <value>Edit standard</value>
+    </data>
+    <data name="grape-sorts-phases.create-standard.select-parameter" xml:space="preserve">
+        <value>Select parameter</value>
+    </data>
+    <data name="grape-sorts-phases.standard.lower-bound" xml:space="preserve">
+        <value>Lower bound</value>
+    </data>
+    <data name="grape-sorts-phases.standard.upper-bound" xml:space="preserve">
+        <value>Upper bound</value>
+    </data>
+    <data name="grape-sorts-phases.order" xml:space="preserve">
+        <value>Phase order</value>
+    </data>
+    <data name="grape-sorts-phases.parameters" xml:space="preserve">
+        <value>Parameters</value>
+    </data>
+    <data name="wine-material-batches.no-active-phase.phase" xml:space="preserve">
+        <value>No active phase</value>
+    </data>
+    <data name="wine-material-batches.phases.edit-terms" xml:space="preserve">
+        <value>Edit terms</value>
     </data>
 </root>

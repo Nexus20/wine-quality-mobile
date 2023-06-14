@@ -4,9 +4,12 @@
 
 @if (_dataLoaded)
 {
+    <div class="mb-3">
+        <a class="btn btn-primary" href="/GrapeSorts/@GrapeSortId">@Localizer["common.back"]</a>
+    </div>
+    
     @if (_availablePhases.Any())
     {
-
         <div>
             <h3>@Localizer["grape-sorts.edit-phases.available-phases"]:</h3>
             <ul class="list-group">

@@ -1,21 +1,21 @@
 ﻿@page "/GrapeSorts/{grapeSortId}"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
-<h3>@Localizer["grape_sort_details_header"]</h3>
+<h3>@Localizer["grape-sorts.details.header"]</h3>
 
 
 @if (GrapeSortDetailsLoaded)
 {
     <a class="btn btn-secondary" href="/GrapeSorts">@Localizer["common.back"]</a>
     
-    <p>@Localizer["grape_sort_name"]: @GrapeSortDetails.Name</p>
+    <p>@Localizer["grape-sorts.name"]: @GrapeSortDetails.Name</p>
     <p>@Localizer["common.createdAt"]: @GrapeSortDetails.CreatedAt</p>
     <p>@Localizer["common.updatedAt"]: @GrapeSortDetails.UpdatedAt</p>
 
-    <h4>@Localizer["grape_sort_phases"]</h4>
+    <h4>@Localizer["grape-sorts.phases"]</h4>
 
     @if (!GrapeSortDetails.Phases.Any())
     {
-        <div>@Localizer["grape_sort_no_phases"]</div>
+        <div>@Localizer["grape-sorts.no-phases"]</div>
     }
     else
     {
@@ -30,29 +30,26 @@
                 </h2>
                 <div id="@($"collapse{grapeSortPhase.Id}")" class="accordion-collapse collapse" aria-labelledby="@($"heading{grapeSortPhase.Id}")" data-bs-parent="#grapeSortAccordion">
                     <div class="accordion-body">
-                        <p>@Localizer["grape_sort_phase_order"]: @grapeSortPhase.Order</p>
-                        <h4>@Localizer["grape_sort_phase_parameters"]</h4>
+                        @* <p>@Localizer["grape-sorts-phases.order"]: @grapeSortPhase.Order</p> *@
+                        <h4>@Localizer["grape-sorts-phases.parameters"]</h4>
                         
-                        <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Phases/@grapeSortPhase.Id/CreateStandard">@Localizer["grape_sort_phase_create_standard"]</a>
+                        @if (grapeSortPhase.GrapeSortProcessPhaseParameterStandards?.Any() == true && grapeSortPhase.GrapeSortProcessPhaseParameterStandards.Count < grapeSortPhase.Parameters.Count)
+                        {
+                            <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Phases/@grapeSortPhase.Id/CreateStandard">@Localizer["grape-sorts-phases.create-standard"]</a>
+                        }
                         
-                        @if (grapeSortPhase.GrapeSortProcessPhaseParameterStandards.Any())
-                        {
-                            <ul>
-                                @foreach (var standard in grapeSortPhase.GrapeSortProcessPhaseParameterStandards)
-                                {
-                                    <li>@standard.ParameterName: @standard.LowerBound - @standard.UpperBound <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Standards/@standard.Id/Edit">@Localizer["grape_sort_phase_edit_standard"]</a></li>
-                                }
-                            </ul>
-                        }
-                        else
-                        {
-                            <ul>
-                                @foreach (var parameter in grapeSortPhase.Parameters)
-                                {
-                                    <li>@parameter.Name</li>
-                                }
-                            </ul>
-                        }
+                        <ul>
+                            @foreach (var standard in grapeSortPhase.GrapeSortProcessPhaseParameterStandards)
+                            {
+                                <li>@standard.ParameterName: @standard.LowerBound - @standard.UpperBound <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id/Standards/@standard.Id/Edit"><i class="fa-solid fa-pen-nib"></i></a></li>
+                            }
+                            
+                            @foreach (var parameter in grapeSortPhase.Parameters.Where(x => grapeSortPhase.GrapeSortProcessPhaseParameterStandards.All(y => y.ParameterName != x.Name)))
+                            {
+                                <li>@parameter.Name</li>
+                            }
+                        </ul>
+                        
                     </div>
                 </div>
             </div>

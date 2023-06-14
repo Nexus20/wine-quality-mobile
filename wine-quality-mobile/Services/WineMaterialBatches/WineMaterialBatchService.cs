@@ -104,4 +104,15 @@ public class WineMaterialBatchService : IWineMaterialBatchService
         if (!response.IsSuccessStatusCode)
             throw new Exception("Unable to delete wine material batch");
     }
+
+    public async Task UpdatePhasesTermsAsync(UpdateWineMaterialBatchPhasesTermsRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        var json = JsonConvert.SerializeObject(request);
+        var data = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await _httpClient.PutAsync($"{_httpClient.BaseAddress}/update_terms", data, cancellationToken);
+        
+        if (!response.IsSuccessStatusCode)
+            throw new Exception("Unable to update wine material batch phases terms");
+    }
 }

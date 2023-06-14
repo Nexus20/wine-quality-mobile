@@ -1,6 +1,7 @@
 ﻿using wine_quality_mobile.Services.GrapeSorts;
 using wine_quality_mobile.Services.Parameters;
 using wine_quality_mobile.Services.Phases;
+using wine_quality_mobile.Services.QualityPrediction;
 using wine_quality_mobile.Services.Sensors;
 using wine_quality_mobile.Services.SignalR;
 using wine_quality_mobile.Services.Users;
@@ -106,6 +107,22 @@ public static class ServicesRegistrations
                 }
 
                 client.BaseAddress = new Uri($"{ApiBaseAddress}/sensor");
+            })
+            .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+            });
+        
+        services.AddHttpClient<IQualityPredictionService, QualityPredictionService>((serviceProvider, client) =>
+            {
+                var appState = serviceProvider.GetRequiredService<AppState>();
+
+                if (appState.IsLoggedIn)
+                {
+                    client.DefaultRequestHeaders.Add("Authorization", $"Bearer {appState.LoginResult!.Token}");
+                }
+
+                client.BaseAddress = new Uri($"{ApiBaseAddress}/qualityPrediction");
             })
             .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
             {

@@ -1,0 +1,33 @@
+﻿@page "/WineMaterialBatches/{wineMaterialBatchId}/Phases/{wineMaterialBatchGrapeSortPhaseId}/Predictions/{predictionId}"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
+<h3>@Localizer["wine-material-batch-phases.prediction-details.header"]</h3>
+
+@if (_dataLoaded)
+{
+    <div class="mb-3">
+        <a class="btn btn-primary" href="/WineMaterialBatches/@WineMaterialBatchId/Phases/@WineMaterialBatchGrapeSortPhaseId">@Localizer["common.back"]</a>
+    </div>
+    
+    <h3 class="mb-3">@Localizer["wine-material-batch-phases.prediction-details.quality"]: @_predictionDetailsResult.Quality</h3>
+                                                                                                               
+    @if (_predictionDetailsResult.ExplanationItems?.Any() == true)
+    {
+        <h4>@Localizer["wine-material-batch-phases.prediction-details.explanation"]</h4>
+        <div>
+        @foreach (var item in _predictionDetailsResult.ExplanationItems)
+        {
+            <div>
+                <p>@Localizer["wine-material-batch-phases.prediction-details.reason"]: @item.Reason</p>
+                <p>@Localizer["wine-material-batch-phases.prediction-details.value"]: @item.Value</p>
+                <p>@Localizer["wine-material-batch-phases.prediction-details.severity"]: @item.Severity</p>
+            </div>
+        }
+        </div>
+    }                                                                                                           
+}
+else
+{
+    <p>
+        @Localizer["common.loading"] ...
+    </p>
+}

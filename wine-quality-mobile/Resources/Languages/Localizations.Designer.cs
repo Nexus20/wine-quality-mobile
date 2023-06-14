@@ -78,6 +78,24 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string common_cancel {
+            get {
+                return ResourceManager.GetString("common.cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string common_close {
+            get {
+                return ResourceManager.GetString("common.close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
         internal static string common_confirm {
@@ -303,11 +321,119 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No phases are configured for this sort.
+        /// </summary>
+        internal static string grape_sorts_no_phases {
+            get {
+                return ResourceManager.GetString("grape-sorts.no-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phases.
+        /// </summary>
+        internal static string grape_sorts_phases {
+            get {
+                return ResourceManager.GetString("grape-sorts.phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create standard.
+        /// </summary>
+        internal static string grape_sorts_phases_create_standard {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.create-standard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create standard.
+        /// </summary>
+        internal static string grape_sorts_phases_create_standard_header {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.create-standard.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select parameter.
+        /// </summary>
+        internal static string grape_sorts_phases_create_standard_select_parameter {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.create-standard.select-parameter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit standard.
+        /// </summary>
+        internal static string grape_sorts_phases_edit_standard {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.edit-standard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit standard.
+        /// </summary>
+        internal static string grape_sorts_phases_edit_standard_header {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.edit-standard.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phase order.
+        /// </summary>
+        internal static string grape_sorts_phases_order {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameters.
+        /// </summary>
+        internal static string grape_sorts_phases_parameters {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower bound.
+        /// </summary>
+        internal static string grape_sorts_phases_standard_lower_bound {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.standard.lower-bound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upper bound.
+        /// </summary>
+        internal static string grape_sorts_phases_standard_upper_bound {
+            get {
+                return ResourceManager.GetString("grape-sorts-phases.standard.upper-bound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logout.
+        /// </summary>
+        internal static string logout {
+            get {
+                return ResourceManager.GetString("logout", resourceCulture);
             }
         }
         
@@ -384,6 +510,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This parameter hasn&apos;t been linked to any phase yet..
+        /// </summary>
+        internal static string parameters_no_phases {
+            get {
+                return ResourceManager.GetString("parameters.no-phases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phases.
         /// </summary>
         internal static string parameters_phases {
@@ -402,6 +537,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available parameters.
+        /// </summary>
+        internal static string phases_configure_parameters_available_parameters {
+            get {
+                return ResourceManager.GetString("phases.configure-parameters.available-parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configure parameters.
         /// </summary>
         internal static string phases_configure_parameters_button {
@@ -411,11 +555,65 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configure phase parameters.
+        /// </summary>
+        internal static string phases_configure_parameters_header {
+            get {
+                return ResourceManager.GetString("phases.configure-parameters.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Linked parameters.
+        /// </summary>
+        internal static string phases_configure_parameters_linked_parameters {
+            get {
+                return ResourceManager.GetString("phases.configure-parameters.linked-parameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create new phase.
+        /// </summary>
+        internal static string phases_create_header {
+            get {
+                return ResourceManager.GetString("phases.create.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm phase deletion.
+        /// </summary>
+        internal static string phases_delete_header {
+            get {
+                return ResourceManager.GetString("phases.delete.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this phase? This action cannot be undone..
+        /// </summary>
+        internal static string phases_delete_warning {
+            get {
+                return ResourceManager.GetString("phases.delete.warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phase details.
         /// </summary>
         internal static string phases_details_header {
             get {
-                return ResourceManager.GetString("phases_details_header", resourceCulture);
+                return ResourceManager.GetString("phases.details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit phase.
+        /// </summary>
+        internal static string phases_edit_header {
+            get {
+                return ResourceManager.GetString("phases.edit.header", resourceCulture);
             }
         }
         
@@ -429,11 +627,20 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string phases_name {
+            get {
+                return ResourceManager.GetString("phases.name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parameters.
         /// </summary>
         internal static string phases_parameters {
             get {
-                return ResourceManager.GetString("phases_parameters", resourceCulture);
+                return ResourceManager.GetString("phases.parameters", resourceCulture);
             }
         }
         
@@ -591,6 +798,96 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Predict quality.
+        /// </summary>
+        internal static string wine_material_batch_phases_predict_quality {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.predict-quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accuracy.
+        /// </summary>
+        internal static string wine_material_batch_phases_predict_quality_accuracy {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.predict-quality.accuracy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select machine learning model.
+        /// </summary>
+        internal static string wine_material_batch_phases_predict_quality_header {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.predict-quality.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explanation.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_explanation {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.explanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prediction details.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_header {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_quality {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reason.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_reason {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Severity.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_severity {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.severity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_details_value {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-details.value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prediction history.
+        /// </summary>
+        internal static string wine_material_batch_phases_prediction_history_header {
+            get {
+                return ResourceManager.GetString("wine-material-batch-phases.prediction-history.header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to End date.
         /// </summary>
         internal static string wine_material_batches_active_phase_end_date {
@@ -708,6 +1005,15 @@ namespace wine_quality_mobile.Resources.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No active phase.
+        /// </summary>
+        internal static string wine_material_batches_no_active_phase_phase {
+            get {
+                return ResourceManager.GetString("wine-material-batches.no-active-phase.phase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assign sensors.
         /// </summary>
         internal static string wine_material_batches_phases_assign_sensors {
@@ -722,6 +1028,15 @@ namespace wine_quality_mobile.Resources.Languages {
         internal static string wine_material_batches_phases_details {
             get {
                 return ResourceManager.GetString("wine-material-batches.phases.details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit terms.
+        /// </summary>
+        internal static string wine_material_batches_phases_edit_terms {
+            get {
+                return ResourceManager.GetString("wine-material-batches.phases.edit-terms", resourceCulture);
             }
         }
         

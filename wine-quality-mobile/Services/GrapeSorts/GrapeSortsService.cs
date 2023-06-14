@@ -67,7 +67,7 @@ public class GrapeSortsService : IGrapeSortsService
     {
         var json = JsonConvert.SerializeObject(request);
         var requestContent = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await _httpClient.PutAsync($"{_httpClient.BaseAddress}GrapeSort/standards/{request.StandardId}", requestContent, cancellationToken);
+        var response = await _httpClient.PutAsync($"{_httpClient.BaseAddress}GrapeSort/standards/{request.StandardId}/edit", requestContent, cancellationToken);
 
         if (!response.IsSuccessStatusCode)
             throw new Exception("Unable to retrieve standard");

@@ -1,3 +1,10 @@
 ﻿@page "/"
+@inherits wine_quality_mobile.Components.Common.BaseComponent
 
-<h1>Wine quality system</h1>
+<h1 class="mb-3">Wine quality system</h1>
+
+@if(!AppState.IsLoggedIn) {
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary btn-md" href="Login">@Localizer["Login"]</a>
+    </div>
+}

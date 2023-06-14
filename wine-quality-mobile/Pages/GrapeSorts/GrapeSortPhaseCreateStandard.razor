@@ -1,11 +1,11 @@
 ﻿@page "/GrapeSorts/{grapeSortId}/Phases/{grapeSortPhaseId}/CreateStandard"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
-<h3>GrapeSortPhaseCreateStandard</h3>
+<h3>@Localizer["grape-sorts-phases.create-standard.header"]</h3>
 
 @if (GrapeSortDetailsLoaded)
 {
     <select class="form-select" @onchange="SelectParameter">
-        <option selected>Choose parameter</option>
+        <option selected>@Localizer["grape-sorts-phases.create-standard.select-parameter"]</option>
         @foreach (var parameter in AvailableParameters)
         {
             <option value="@parameter.Id">@parameter.Name</option>
@@ -15,23 +15,25 @@
     @if (selectedParameter != null)
     {
         <div class="mt-4">
-            <h4>Set Standard for @selectedParameter.Name</h4>
+            <h4>@selectedParameter.Name</h4>
 
             <div class="mb-3">
-                <label for="lowerBound" class="form-label">Lower Bound</label>
+                <label for="lowerBound" class="form-label">@Localizer["grape-sorts-phases.standard.lower-bound"]</label>
                 <input type="number" class="form-control" id="lowerBound" @bind="lowerBound">
             </div>
 
             <div class="mb-3">
-                <label for="upperBound" class="form-label">Upper Bound</label>
+                <label for="upperBound" class="form-label">@Localizer["grape-sorts-phases.standard.upper-bound"]</label>
                 <input type="number" class="form-control" id="upperBound" @bind="upperBound">
             </div>
 
-            <button class="btn btn-primary" @onclick="CreateStandard">Create Standard</button>
+            <button class="btn btn-primary" @onclick="CreateStandard">@Localizer["common.confirm"]</button>
         </div>
     }
     
-    <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id">@Localizer["common.back"]</a>
+    <div class="mt-1">
+        <a class="btn btn-secondary" href="/GrapeSorts/@GrapeSortDetails.Id">@Localizer["common.back"]</a>
+    </div>
 }
 else
 {

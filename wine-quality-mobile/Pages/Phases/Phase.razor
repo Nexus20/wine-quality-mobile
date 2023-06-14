@@ -1,15 +1,15 @@
 ﻿@page "/Phases/{phaseId}"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
 
-<h3>@Localizer["phases_details_header"]</h3>
+<h3>@Localizer["phases.details.header"]</h3>
 
 @if (_phaseLoaded)
 {
-    <p>@Localizer["phases_name"]: @_phase.Name</p>
+    <p>@Localizer["phases.name"]: @_phase.Name</p>
     <p>@Localizer["common.createdAt"]: @_phase.CreatedAt</p>
     <p>@Localizer["common.updatedAt"]: @_phase.UpdatedAt</p>
 
-    <h4>@Localizer["phases_parameters"]</h4>
+    <h4>@Localizer["phases.parameters"]</h4>
 
     @if (!_phase.Parameters.Any())
     {

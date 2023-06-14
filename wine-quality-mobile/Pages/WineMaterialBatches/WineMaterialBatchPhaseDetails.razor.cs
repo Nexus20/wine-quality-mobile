@@ -85,8 +85,8 @@ public partial class WineMaterialBatchPhaseDetails
 
     public async ValueTask DisposeAsync()
     {
-        await SignalRService.DisconnectFromHubAsync();
-        await SignalRService.DisposeAsync();
+        // await SignalRService.DisconnectFromHubAsync();
+        // await SignalRService.DisposeAsync();
     }
 
     private async Task OpenChartDialog(WineMaterialBatchGrapeSortPhaseParameterDetailsResult parameter)

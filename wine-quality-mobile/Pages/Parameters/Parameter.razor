@@ -1,21 +1,21 @@
 ﻿@page "/Parameters/{parameterId}"
 @inherits wine_quality_mobile.Components.Common.BaseComponent
 
-<h3>@Localizer["parameters_details_header"]</h3>
+<h3>@Localizer["parameters.details.header"]</h3>
 
 @if (_parameterLoaded)
 {
     <a class="btn btn-secondary" href="/Parameters">@Localizer["common.back"]</a>
     
-    <p>@Localizer["parameters_name"]: @_parameter.Name</p>
+    <p>@Localizer["parameters.name"]: @_parameter.Name</p>
     <p>@Localizer["common.createdAt"]: @_parameter.CreatedAt</p>
     <p>@Localizer["common.updatedAt"]: @_parameter.UpdatedAt</p>
 
-    <h4>@Localizer["parameters_phases"]</h4>
+    <h4>@Localizer["parameters.phases"]</h4>
 
     @if (!_parameter.Phases.Any())
     {
-        <div>@Localizer["parameters_no_phases"]</div>
+        <div>@Localizer["parameters.no-phases"]</div>
     }
     else
     {

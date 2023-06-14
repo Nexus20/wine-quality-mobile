@@ -26,7 +26,7 @@
                     <div class="accordion-body">
                         @foreach (var sensor in group.Value)
                         {
-                            <p>@Localizer["sensors.id"]: @sensor.Id | @Localizer["sensors.status"]: @Statuses[sensor.Status]</p>
+                            <p>@Localizer["sensors.id"]: @sensor.Id : @sensor.Status.ToString()</p>
                         }
                     </div>
                 </div>

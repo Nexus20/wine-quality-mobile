@@ -44,7 +44,6 @@
                             else
                             {
                                 <p>@Localizer["wine-material-batches.no-active-phase.phase"]</p>
-                                @* Put here your logic about "startProcessAllowed" and "startProcessNotAllowedReasons". *@
                             }
                         </div>
                     }
@@ -54,13 +53,14 @@
         <div class="row mt-3">
             <div class="col-12">
                 <section class="phases-section">
-                    <h3>@Localizer["wine-material-batches.phases.header"]</h3>
-                    @* Not sure how to replicate "openPhasesEditDialog" functionality. Place your logic here. *@
-                    @* <button @onclick="() => {}">@Localizer["wine-material-batches.phases.edit"]</button> *@
+                    <h3 class="mb-2">@Localizer["wine-material-batches.phases.header"]</h3>
+                    <div>
+                        <a class="btn btn-primary mb-2" href="/WineMaterialBatches/@WineMaterialBatchId/EditPhasesTerms">@Localizer["wine-material-batches.phases.edit-terms"]</a>
+                    </div>
                     <div>
                         @foreach (var wineMaterialBatchGrapeSortPhase in WineMaterialBatchDetails.Phases)
                         {
-                            <div class="phase-card">
+                            <div class="phase-card mb-3">
                                 <h3>@wineMaterialBatchGrapeSortPhase.Phase.PhaseName</h3>
                                 <p>@Localizer["wine-material-batches.phases.start-date"]: @wineMaterialBatchGrapeSortPhase.StartDate.ToShortDateString()</p>
                                 <p>@Localizer["wine-material-batches.phases.end-date"]: @wineMaterialBatchGrapeSortPhase.EndDate.ToShortDateString()</p>
